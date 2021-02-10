@@ -1,3 +1,4 @@
+import borders from './borders';
 import colors from './colors';
 import space from './space';
 import typography from './typography';
@@ -15,6 +16,7 @@ const themeUiColors = {
 };
 
 export default {
+  borders,
   colors: { ...colors, ...themeUiColors },
   space,
   text: typography.variants,
