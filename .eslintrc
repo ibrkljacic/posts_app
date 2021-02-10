@@ -1,5 +1,5 @@
 {
-  "extends": ["react-app", "plugin:prettier/recommended"],
+  "extends": ["react-app", "plugin:prettier/recommended", "plugin:import/errors", "plugin:import/warnings"],
   "rules": {
     "max-len": [
       "error",
@@ -16,5 +16,13 @@
     "react-hooks/exhaustive-deps": 0,
     "quotes": [2, "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
     "prettier/prettier": ["error", { "singleQuote": true }]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["~", "./src"]],
+        "extensions": [".ts", ".js", ".jsx", ".json"]
+      }
+    }
   }
 }
