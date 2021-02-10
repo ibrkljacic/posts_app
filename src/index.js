@@ -2,12 +2,14 @@ import '~/styles/index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ThemeProvider } from 'theme-ui';
 
 import App from '~/components/App';
+import { theme } from '~/ui';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <App />
-  </React.StrictMode>,
+  </ThemeProvider>,
   document.getElementById('root')
 );

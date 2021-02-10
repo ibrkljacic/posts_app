@@ -17,6 +17,7 @@
     "react-hooks/exhaustive-deps": 0,
     "quotes": [2, "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
     "prettier/prettier": ["error", { "singleQuote": true }],
+    "import/no-anonymous-default-export": [2, {"allowObject": true}],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error"
   },
