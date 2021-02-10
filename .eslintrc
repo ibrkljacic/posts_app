@@ -1,5 +1,6 @@
 {
   "extends": ["react-app", "plugin:prettier/recommended", "plugin:import/errors", "plugin:import/warnings"],
+  "plugins": ["simple-import-sort"],
   "rules": {
     "max-len": [
       "error",
@@ -15,7 +16,9 @@
     ],
     "react-hooks/exhaustive-deps": 0,
     "quotes": [2, "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
-    "prettier/prettier": ["error", { "singleQuote": true }]
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   },
   "settings": {
     "import/resolver": {
