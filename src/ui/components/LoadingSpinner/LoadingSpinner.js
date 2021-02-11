@@ -1,5 +1,4 @@
 import PT from 'prop-types';
-import React from 'react';
 import InlineSvg from 'react-inlinesvg';
 
 import { theme } from '~/ui';

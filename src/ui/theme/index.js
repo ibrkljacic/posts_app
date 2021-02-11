@@ -1,5 +1,7 @@
 import borders from './borders';
 import colors from './colors';
+import radii from './radii';
+import sizes from './sizes';
 import space from './space';
 import typography from './typography';
 
@@ -7,17 +9,19 @@ import typography from './typography';
 const themeUiColors = {
   background: colors.white,
   text: colors['gray-700'],
-  modes: {
-    dark: {
-      background: colors['gray-700'],
-      text: colors.white,
-    },
-  },
+  // modes: {
+  //   dark: {
+  //     background: colors['gray-700'],
+  //     text: colors.white,
+  //   },
+  // },
 };
 
 export default {
   borders,
   colors: { ...colors, ...themeUiColors },
+  radii,
+  sizes,
   space,
   text: typography.variants,
 };

@@ -1,5 +1,4 @@
 import PT from 'prop-types';
-import React from 'react';
 import InlineSvg from 'react-inlinesvg';
 
 import { Box, styles } from '~/ui';
@@ -13,17 +12,16 @@ const sizeMap = {
   xl: '32px',
 };
 
-function Icon({ color, icon, isDisabled, size = 'm', sx, onClick, ...rest }) {
+function Icon({ color, icon, size = 'm', sx = {}, ...rest }) {
   const iconSrc = icons[icon]; // eslint-disable-line import/namespace
   if (!iconSrc) {
     return null;
   }
 
-  const clickableStyles = onClick ? styles.interactions.clickable : {};
+  const clickableStyles = rest.onClick ? styles.interactions.clickable : {};
 
   return (
     <Box
-      isDisabled={isDisabled}
       sx={{
         height: sizeMap[size],
         width: sizeMap[size],
@@ -40,7 +38,6 @@ function Icon({ color, icon, isDisabled, size = 'm', sx, onClick, ...rest }) {
           width: '100%',
         },
       }}
-      onClick={onClick}
       {...rest}
     >
       <InlineSvg src={iconSrc} />
@@ -53,10 +50,8 @@ export const iconKeyPropTypes = PT.oneOf(Object.keys(icons));
 Icon.propTypes = {
   color: PT.string,
   icon: iconKeyPropTypes.isRequired,
-  isDisabled: PT.bool,
   size: PT.oneOf(Object.keys(sizeMap)),
   sx: PT.object,
-  onClick: PT.func,
 };
 
 export default Icon;

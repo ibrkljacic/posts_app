@@ -1,10 +1,9 @@
 import PT from 'prop-types';
-import React from 'react';
 import { Text as ThemeText } from 'theme-ui';
 
 import { styles, theme } from '~/ui';
 
-function Text({ as = 'span', children, color, sx, textAlign, variant = 'm-spaced', ...rest }) {
+function Text({ as = 'span', children, color, sx = {}, textAlign, variant = 'm-spaced', ...rest }) {
   const clickableStyle = rest.onClick ? styles.interactions.clickable : {};
 
   return (

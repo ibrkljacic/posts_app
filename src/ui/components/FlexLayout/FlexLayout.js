@@ -1,5 +1,4 @@
 import PT from 'prop-types';
-import React from 'react';
 
 import { Box, styles } from '~/ui';
 
@@ -13,7 +12,7 @@ function FlexLayout({
   flexWrap,
   justifyContent,
   space = 0,
-  sx,
+  sx = {},
   ...rest
 }) {
   const clickableStyles = rest.onClick ? styles.interactions.clickable : {};
