@@ -26,3 +26,5 @@ LoadingSpinner.propTypes = {
 };
 
 export default LoadingSpinner;
+// storybook exports
+export const loadingSpinnerSizesMap = sizesMap;

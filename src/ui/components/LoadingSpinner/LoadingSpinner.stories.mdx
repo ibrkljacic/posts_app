@@ -1,0 +1,37 @@
+import { ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { FlexLayout } from '~/ui';
+
+import LoadingSpinner, { loadingSpinnerSizesMap } from './LoadingSpinner';
+
+<Meta title="Components/Feedback/LoadingSpinner" component={LoadingSpinner} />
+
+# LoadingSpinner
+
+`LoadingSpinner` indicates loading states with simple size and color configuration.
+
+## Props
+
+<ArgsTable of={LoadingSpinner} />
+
+## Use
+
+<Canvas>
+  <FlexLayout alignItems="center" space={4}>
+    {Object.keys(loadingSpinnerSizesMap).map((size) => (
+      <LoadingSpinner key={size} size={size} />
+    ))}
+  </FlexLayout>
+</Canvas>
+
+### Colors
+
+`LoadingSpinner` is theme-aware and accepts theme colors directly in the `color` prop.
+
+<Canvas>
+  <FlexLayout space={4}>
+    <LoadingSpinner color="red-500" />
+    <LoadingSpinner color="black" />
+    <LoadingSpinner color="gray-600" />
+  </FlexLayout>
+</Canvas>

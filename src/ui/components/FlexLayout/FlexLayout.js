@@ -1,6 +1,6 @@
 import PT from 'prop-types';
 
-import { Box, styles } from '~/ui';
+import { Box } from '~/ui';
 
 function FlexLayout({
   alignItems,
@@ -15,13 +15,11 @@ function FlexLayout({
   sx = {},
   ...rest
 }) {
-  const clickableStyles = rest.onClick ? styles.interactions.clickable : {};
   const marginDirection = flexDirection === 'column' ? 'mb' : 'mr';
 
   return (
     <Box
       sx={{
-        ...clickableStyles,
         ...sx,
         alignItems,
         display: 'flex',

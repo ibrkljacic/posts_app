@@ -1,0 +1,53 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import { Box } from '~/ui';
+import ColorPalette from '~/ui/docs/ColorPalette';
+
+import colors from './colors';
+
+<Meta title="Specs/Colors" />
+
+# Colors
+
+Specification for supported colors.
+
+## Palette
+
+Supported color hues and shade variants.
+
+<Canvas>
+  <Box sx={{ display: 'grid', gap: '24px', gridTemplateColumns: '1fr 1fr 1fr' }}>
+    <ColorPalette colorKey="gray" colorMap={colors} />
+    <ColorPalette colorKey="red" colorMap={colors} />
+  </Box>
+</Canvas>
+
+## Alphas
+
+Alphas are useful in interaction states (e.g. hover) or to slightly darken/lighten an associated color.
+
+<Canvas>
+  <Box sx={{ display: 'grid', gap: '24px', gridTemplateColumns: '1fr 1fr 1fr' }}>
+    <ColorPalette colorKey="black-alpha" colorMap={colors} />
+    <ColorPalette colorKey="white-alpha" colorMap={colors} />
+  </Box>
+</Canvas>
+
+## Notes
+
+- Any UI component in the system is _color-aware_ and can accept color keys defined in this section.
+- Avoid hardcoding color values that do not exist outside of this spec.
+
+## CSS Properties
+
+- `background-color`
+- `border-color`
+- `border-bottom-color`
+- `border-left-color`
+- `border-right-color`
+- `border-top-color`
+- `caret-color`
+- `color`
+- `fill`
+- `outline-color`
+- `stroke`

@@ -1,24 +1,7 @@
 import PT from 'prop-types';
 
-import { FlexLayout, Icon, LoadingSpinner, Text } from '~/ui';
+import { FlexLayout, Icon, LoadingSpinner, styles, Text } from '~/ui';
 import { iconKeyPropTypes } from '~/ui/components/Icon';
-
-const variantsMap = {
-  primary: {
-    border: 'border-gray',
-    bg: 'transparent',
-    color: 'red-700',
-    hoverStyles: {
-      border: 'border-red',
-      color: 'red-500',
-      transition: 'all ease .25s',
-    },
-  },
-  secondary: {
-    bg: 'red-500',
-    color: 'white',
-  },
-};
 
 const sizesMap = {
   m: {
@@ -37,6 +20,23 @@ const sizesMap = {
   },
 };
 
+const variantsMap = {
+  primary: {
+    border: 'border-gray',
+    bg: 'transparent',
+    color: 'red-700',
+    hoverStyles: {
+      border: 'border-red',
+      color: 'red-500',
+      transition: 'all ease .25s',
+    },
+  },
+  secondary: {
+    bg: 'red-500',
+    color: 'white',
+  },
+};
+
 function Button({
   iconLeft,
   iconRight,
@@ -49,7 +49,7 @@ function Button({
   onClick = () => {},
 }) {
   const { bg, border, color, hoverStyles } = variantsMap[variant];
-  const { height, iconSize, px, space, textVariant } = sizesMap[size];
+  const { height, iconSize, px, space, textVariant, width } = sizesMap[size];
 
   return (
     <FlexLayout
@@ -59,14 +59,15 @@ function Button({
       isDisabled={isDisabled || isLoading}
       px={px}
       sx={{
+        ...sx,
+        ...styles.interactions.clickable,
         bg,
         border: border || 'unset',
         color,
         outline: 'none',
         position: 'relative',
         height,
-        width: 'fit-content',
-        ...sx,
+        width: width || 'fit-content',
 
         '&:hover': {
           background: (theme) => `linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), ${theme.colors[bg]}`,
@@ -105,3 +106,6 @@ Button.propTypes = {
 };
 
 export default Button;
+// storybook exports
+export const buttonSizesMap = sizesMap;
+export const buttonVariantsMap = variantsMap;

@@ -1,0 +1,19 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import IconExplorer from '~/ui/docs/IconExplorer';
+
+<Meta title="Specs/Icons" />
+
+# Icons
+
+Specification for supported icons and permitted color and size configurations.
+
+<Canvas>
+  <IconExplorer />
+</Canvas>
+
+## Notes
+
+- Use the `Icon` component to implement icons.
+- Avoid hardcoding icon size and colors and use the allowed values to ensure icons in UIs are consistently applied.
+- To add a new unsupported icon, make sure to add the corresponding SVG asset in `ui/assets/icons`.

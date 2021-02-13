@@ -1,0 +1,61 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import { FlexLayout } from '~/ui';
+import Space from '~/ui/docs/Space';
+
+<Meta title="Specs/Space" />
+
+# Space
+
+Specifications for space units based on `4px`.
+
+<Canvas>
+  <Space />
+</Canvas>
+
+## Notes
+
+- Avoid hardcoding space in UIs (e.g. `margin`, `padding`).
+- For non-conforming space (e.g. `'1px'`, `2px`, `3px` etc), hardcode the pixel values after confirmation with design. These should ideally exist as private implementations of components and not liberally used in business logic and page layouts.
+
+## CSS Properties
+
+- `bottom`
+- `column-gap`
+- `gap`
+- `grid-column-gap`
+- `grid-gap`
+- `grid-row-gap`
+- `inset-block-end`
+- `inset-block-start`
+- `inset-block`
+- `inset-inline-end`
+- `inset-inline-start`
+- `inset-inline`
+- `inset`
+- `left`
+- `margin-block-end`
+- `margin-block-start`
+- `margin-block`
+- `margin-bottom`
+- `margin-inline-end`
+- `margin-inline-start`
+- `margin-inline`
+- `margin-left`
+- `margin-right`
+- `margin-top`
+- `margin`
+- `padding-block-end`
+- `padding-block-start`
+- `padding-block`
+- `padding-bottom`
+- `padding-inline-end`
+- `padding-inline-start`
+- `padding-inline`
+- `padding-left`
+- `padding-right`
+- `padding-top`
+- `padding`
+- `right`
+- `row-gap`
+- `top`

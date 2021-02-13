@@ -1,0 +1,82 @@
+import { ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { Box, FlexLayout } from '~/ui';
+
+import Button, { buttonSizesMap, buttonVariantsMap } from './Button';
+
+<Meta title="Components/Input/Button" component={Button} />
+
+# Button
+
+`Button` is the primary input component allowing users to confirm actions.
+
+## Props
+
+<ArgsTable of={Button} />
+
+## Use
+
+Easily render consistent button text and icons using the `Button` component.
+
+<Canvas>
+  <Button iconLeft="search" isLoading text="Search" />
+</Canvas>
+
+### Icons
+
+Easily render an icon for the button by providing a valid icon key to the `iconLeft` or `iconRight` prop. Please refer to the **Icons** spec for supported icons.
+
+<Canvas>
+  <FlexLayout flexDirection="column" space={4}>
+    <Button text="No icon" />
+    <FlexLayout space={4}>
+      <Button iconLeft="arrowRight" text="Left Icon" />
+      <Button iconLeft="chevronDown" text="Left Icon" />
+      <Button iconLeft="search" text="Left Icon" />
+    </FlexLayout>
+    <FlexLayout space={4}>
+      <Button iconRight="arrowRight" text="Right Icon" />
+      <Button iconRight="chevronDown" text="Right Icon" />
+      <Button iconRight="search" text="Right Icon" />
+    </FlexLayout>
+  </FlexLayout>
+</Canvas>
+
+### States
+
+`Button` supports well-defined interaction states:
+
+- loading
+- disabled
+- hover
+- active/clicked
+
+When a `Button` is in loading state, it is conveniently disabled, and its corresponding icon is replaced by a loading icon.
+
+<Canvas>
+  <FlexLayout space={4}>
+    <Button iconLeft="user" text="Default" />
+    <Button isDisabled iconLeft="user" text="Disabled" />
+    <Button isLoading iconLeft="user" text="Loading" />
+  </FlexLayout>
+</Canvas>
+
+### Variants
+
+`Button` supports the following variants to ensure consistent rendering and usage of buttons in UIs. Each variant applies the state behaviors (mentioned in earlier sections) consistently.
+
+<Canvas>
+  <FlexLayout flexDirection="column" p={4} space={4}>
+    {Object.keys(buttonVariantsMap).map((variant) =>
+      Object.keys(buttonSizesMap).map((size) => (
+        <FlexLayout key={`${variant}-${size}`} space={4}>
+          <Button size={size} text={variant} variant={variant} />
+          <Button iconLeft="user" size={size} text="iconLeft" variant={variant} />
+          <Button iconRight="chevronDown" size={size} text="iconRight" variant={variant} />
+          <Button isDisabled size={size} text="disabled" variant={variant} />
+          <Button isLoading size={size} text="loading" variant={variant} />
+        </FlexLayout>
+      ))
+    )}
+  </FlexLayout>
+</Canvas>

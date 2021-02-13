@@ -1,0 +1,98 @@
+import { ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import Box from './Box';
+
+<Meta title="Components/Core/Box" component={Box} />
+
+# Box
+
+`Box` is the fundamental building block of the **UI System**. It is a layout primitive that provides easy access to theme-based properties used in the system.
+
+All components in the **UI System** should be composed using `Box`.
+
+## Props
+
+In addition to all props supported by the `div` element and theme props, `Box` explicitly supports the following additional props:
+
+<ArgsTable of={Box} />
+
+## Use
+
+### Basic
+
+<Canvas>
+  <Box
+    style={{
+      background: '#FFAE85',
+      color: '#900500',
+    }}
+  >
+    Like a simple div.
+  </Box>
+</Canvas>
+
+### Theme props
+
+Easy integration with theme values using relevant convenient theme props to build consistent UIs.
+
+<Canvas>
+  <Box
+    color="white"
+    bg="red-500"
+    px={10}
+    py={4}
+    sx={{
+      borderRadius: 'm',
+      boxShadow: 'depth-3',
+    }}
+  >
+    Supports theme props.
+  </Box>
+</Canvas>
+
+## Behaviors
+
+`Box` supports a number of useful behaviors usable in various UI layouts and features.
+
+### Interactions
+
+`Box` supports convenient interaction states through specification of these props:
+
+- `disabled`: disables pointer events (e.g. click actions) and applies a disabled visual style.
+- `onClick` / `onMouseEnter`: auto applies a pointer cursor to indicate the element is interactable.
+
+<Canvas>
+  <Box isDisabled p={3} onClick={() => alert('not clickable')}>
+    Disabled
+  </Box>
+  <Box p={3} onClick={() => alert('clicked')}>
+    Clicked
+  </Box>
+  <Box p={3} onMouseEnter={() => console.log('hovered')}>
+    Hovered
+  </Box>
+</Canvas>
+
+### `as` another component
+
+`Box` provides the useful `as` polymorphic prop to render the result as the specified element or React component. When setting the `as` prop, you can also provide props that relate to the provided element
+
+Check the browser inspector to observe final rendering results in the following examples.
+
+<Canvas>
+  <Box as="p" p={3}>
+    This is a paragraph
+  </Box>
+  <Box as="blockquote" p={3}>
+    This is a blockquote
+  </Box>
+  <Box as="section" p={3}>
+    This is a section
+  </Box>
+  <Box as="a" href="https://www.google.com/" p={3}>
+    This is a link
+  </Box>
+  <Box as="footer" p={3}>
+    This is a footer
+  </Box>
+</Canvas>

@@ -1,0 +1,261 @@
+import { ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { Box, Icon, Text } from '~/ui';
+
+import FlexLayout from './FlexLayout';
+
+<Meta title="Components/Core/FlexLayout" component={FlexLayout} />
+
+# FlexLayout
+
+`FlexLayout` provides a simple but powerful way to build flex-based layouts with consistent spacing between child elements. Spacing units are defined in the **Space** spec.
+
+## Props
+
+`FlexLayout` supports all core props that the `Box` element supports, and other relevant flex-based properties.
+
+<ArgsTable of={FlexLayout} />
+
+## Use
+
+With `FlexLayout`, you can build any advanced layout with ease and consistency! The code is also readable and represents the intention of the desired layout.
+
+<Canvas>
+  <FlexLayout bg="gray-400" justifyContent="space-between" px={5} py={3} space={5}>
+    <FlexLayout alignItems="center" space={5}>
+      <Icon color="gray-600" icon="search" />
+      <Text variant="m-spaced-medium">Search</Text>
+    </FlexLayout>
+    <FlexLayout space={5}>
+      <FlexLayout alignItems="center" flexDirection="column" space={1}>
+        <Icon icon="user" />
+        <Text variant="s-spaced-bold-caps">Account</Text>
+      </FlexLayout>
+      <FlexLayout alignItems="center" color="red-500" flexDirection="column" space={1}>
+        <Icon icon="chevronDown" />
+        <Text variant="s-spaced-bold-caps">Notifications</Text>
+      </FlexLayout>
+    </FlexLayout>
+  </FlexLayout>
+</Canvas>
+
+### Basic
+
+Consistently layout content with equal spacing. Apply relevant theme props to `FlexLayout`.
+
+<Canvas>
+  <FlexLayout as="footer" bg="gray-700" color="black" px={6} py={4} space={4} sx={{ border: 'border-gray' }}>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+### Spacing
+
+Spacing is specified using the **UI System** integer-based space units.
+
+#### `space = 0`
+
+<Canvas>
+  <FlexLayout space={0}>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+#### `space = 2`
+
+<Canvas>
+  <FlexLayout space={2}>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+#### `space = 10`
+
+<Canvas>
+  <FlexLayout space={10}>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+### Alignments
+
+Use familiar flex CSS values for `alignItems` and `justifyContent` properties to configure alignment behaviors.
+
+#### `alignItems = 'flex-start'`
+
+<Canvas>
+  <FlexLayout alignItems="space-between" space={4}>
+    <Box bg="gray-500" p={4} sx={{ height: 20 }}>
+      small box
+    </Box>
+    <Box bg="gray-500" p={4} sx={{ height: 40 }}>
+      medium box
+    </Box>
+    <Box bg="gray-500" p={4} sx={{ height: 80 }}>
+      large box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+#### `alignItems = 'center'`
+
+<Canvas>
+  <FlexLayout alignItems="center" space={4}>
+    <Box bg="gray-500" p={4} sx={{ height: 20 }}>
+      small box
+    </Box>
+    <Box bg="gray-500" p={4} sx={{ height: 40 }}>
+      medium box
+    </Box>
+    <Box bg="gray-500" p={4} sx={{ height: 80 }}>
+      large box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+#### `alignItems = 'flex-end'`
+
+<Canvas>
+  <FlexLayout alignItems="flex-end" space={4}>
+    <Box bg="gray-500" p={4} sx={{ height: 20 }}>
+      small box
+    </Box>
+    <Box bg="gray-500" p={4} sx={{ height: 40 }}>
+      medium box
+    </Box>
+    <Box bg="gray-500" p={4} sx={{ height: 80 }}>
+      large box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+#### `justifyContent = 'center'`
+
+<Canvas>
+  <FlexLayout justifyContent="center" space={4}>
+    <Box bg="gray-500" p={4} p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4} p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4} p={4}>
+      Box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+#### `justifyContent = 'flex-end'`
+
+<Canvas>
+  <FlexLayout justifyContent="flex-end" space={4}>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+#### `justifyContent = 'space-between'`
+
+<Canvas>
+  <FlexLayout justifyContent="space-between" space={4}>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" p={4}>
+      Box
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+### Wrap
+
+Use the `flexWrap` property to apply the `flex-wrap` CSS property if contents of `FlexLayout` should wrap when exceeding the dimensions specified on the component.
+
+<Canvas>
+  <FlexLayout flexWrap="wrap" space={4} sx={{ width: 300 }}>
+    <Box bg="gray-500" mb={4} p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" mb={4} p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" mb={4} p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" mb={4} p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" mb={4} p={4}>
+      Box
+    </Box>
+    <Box bg="gray-500" mb={4} p={4}>
+      Box
+    </Box>
+  </FlexLayout>
+</Canvas>

@@ -1,0 +1,102 @@
+import { ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { Box, FlexLayout, Text } from '~/ui';
+
+import Icon, { iconSizesMap } from './Icon';
+
+<Meta title="Components/Core/Icon" component={Icon} />
+
+# Icon
+
+`Icon` provides a consistent way to render icons in UIs using constrained sizes and colors.
+
+## Props
+
+`Icon` supports all core props that the `Box` element supports, and other relevant icon-based properties.
+
+<ArgsTable of={Icon} />
+
+## Use
+
+### Basic
+
+Simply pass a valid `icon` key, `color` and `size` prop to use a supported icon configuration.
+
+<Canvas>
+  <Icon color="red-500" icon="user" size="xl" />
+</Canvas>
+
+### Icon
+
+Provide a valid `icon` prop to render an icon. If the `icon` is invalid, nothing will be rendered. For more details on valid `icon` usage, please check the **Icons** spec page.
+
+<Canvas>
+  <FlexLayout alignItems="center" space={4}>
+    <Icon icon="arrowRight" />
+    <Icon icon="chevronDown" />
+    <Icon icon="search" />
+    <Icon icon="user" />
+  </FlexLayout>
+</Canvas>
+
+### Size
+
+`Icon` supports constrained ways to specify icon size using the `size` prop.
+
+<Canvas>
+  <FlexLayout alignItems="center" space={4}>
+    {Object.keys(iconSizesMap).map((size) => (
+      <Icon key={size} icon="search" size={size} />
+    ))}
+  </FlexLayout>
+</Canvas>
+
+### Colors
+
+`Icon` is theme-aware and accepts theme colors directly in the `color` prop.
+
+<Canvas>
+  <FlexLayout space={4}>
+    <Icon color="red-500" icon="user" />
+    <Icon color="gray-500" icon="user" />
+    <Icon color="gray-700" icon="user" />
+    <Icon color="black" icon="user" />
+  </FlexLayout>
+</Canvas>
+
+You can also specify the `Icon` color by setting the `color` value of its parent container. This is useful when pairing the icon color with the text color as demonstrated in the example below:
+
+<Canvas>
+  <FlexLayout color="red-500" alignItems="center" space={2}>
+    <Icon icon="close" />
+    <Text>Close</Text>
+  </FlexLayout>
+</Canvas>
+
+You can create advanced background/color relationships by setting the appropriate `bg`, `color`, `p`, `sx` props on a parent `Box` component.
+
+<Canvas>
+  <FlexLayout space={4}>
+    <Box bg="gray-500" color="black" p={2}>
+      <Icon icon="close" />
+    </Box>
+    <Box bg="red-500" color="white" p={2}>
+      <Icon icon="user" />
+    </Box>
+    <Box bg="gray-700" color="white" p={2} sx={{ borderRadius: 'round' }}>
+      <Icon icon="chevronDown" />
+    </Box>
+  </FlexLayout>
+</Canvas>
+
+## Behaviors
+
+`Icon` is a **Core** component, meaning it supports common interaction behaviors (disabled, click/hover styles).
+
+<Canvas>
+  <FlexLayout space={4}>
+    <Icon color="gray-500" disabled icon="search" onClick={() => alert('not clickable')} />
+    <Icon color="gray-500" icon="search" onClick={() => alert('clicked')} />
+    <Icon color="gray-500" icon="search" onMouseEnter={() => console.log('hovered')} />
+  </FlexLayout>
+</Canvas>

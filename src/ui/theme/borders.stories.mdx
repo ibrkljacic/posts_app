@@ -1,0 +1,31 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import { FlexLayout } from '~/ui';
+import Borders from '~/ui/docs/Borders';
+
+import colors from './colors';
+
+<Meta title="Specs/Borders" />
+
+# Borders
+
+Specification for border application.
+
+<Canvas>
+  <Borders />
+</Canvas>
+
+## Notes
+
+- Conveniently specify default border styles with the `sx` prop with `{ border: 'border' }`, `{ borderBottom: 'border' }`.
+- Use the `'border'` value for most borders to keep border style consistent.
+- Use the `'border-alpha-*`' values if the border should inherit the underlying background color of its content.
+- Avoid hardcoding border color values, and instead discuss and add them to the specs if edge cases come up.
+
+## CSS Properties
+
+- `border`
+- `borderBottom`
+- `borderLeft`
+- `borderRight`
+- `borderTop`
