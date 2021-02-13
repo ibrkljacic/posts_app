@@ -7,7 +7,7 @@ import './index.css';
 
 const theme = create({
   colorSecondary: colors['red-500'],
-  base: 'dark',
+  textColor: colors['black']
 });
 
 addons.setConfig({ theme });

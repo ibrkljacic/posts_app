@@ -1,7 +1,13 @@
 import { PageLayout } from '~/components/Shared';
 
+import Login from './Login';
+
 function HomePage() {
-  return <PageLayout>Home Page</PageLayout>;
+  return (
+    <PageLayout>
+      <Login />
+    </PageLayout>
+  );
 }
 
 export default HomePage;

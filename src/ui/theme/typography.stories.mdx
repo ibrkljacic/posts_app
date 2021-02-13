@@ -1,0 +1,27 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import { FlexLayout, Text } from '~/ui';
+import Typography from '~/ui/docs/Typography';
+
+<Meta title="Specs/Typography" />
+
+# Typography
+
+Specification for different text styles.
+
+## Fonts
+
+We use the `Roboto Mono` font as the primary font.
+
+## Variants
+
+The following typographic variants consistently implement text styles (i.e. `fontSize`, `fontStyle`, `fontWeight`, `letterSpacing`, `lineHeight`):
+
+<Canvas>
+  <Typography />
+</Canvas>
+
+## Notes
+
+- Use the `Text` component with appropriate `variant` prop to apply typography.
+- Avoid hardcoding text styles at all times and rely on existing variants.

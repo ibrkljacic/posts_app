@@ -8,7 +8,7 @@ function Sizes() {
       {Object.keys(sizes).map((size) => {
         const width = sizes[size];
         return (
-          <FlexLayout key={size} alignItems="center" space={8}>
+          <FlexLayout key={size} alignItems="center" space={4}>
             <Text sx={{ flex: '0 0 250px' }} variant="m-spaced-bold">
               {size} ({width})
             </Text>

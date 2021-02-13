@@ -1,3 +1,7 @@
-.sbdocs {
-  font-family: Inter, Helvetica, Arial !important;
+#docs-root {
+  color: black !important;
+}
+
+.sidebar-item {
+  color: white !important;
 }

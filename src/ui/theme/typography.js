@@ -7,9 +7,8 @@ export const fontStyles = {
 };
 
 export const fontWeights = {
-  normal: 'normal',
-  medium: '500',
-  bold: 'bold',
+  normal: '400',
+  bold: '700',
 };
 
 const variants = {
@@ -29,7 +28,7 @@ const variants = {
     fontFamily: fonts.body,
     fontSize: '22px',
     fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.medium,
+    fontWeight: fontWeights.bold,
     lineHeight: '26px',
   },
   '2l-spaced': {
@@ -39,23 +38,11 @@ const variants = {
     fontWeight: fontWeights.normal,
     lineHeight: '24px',
   },
-  'l-spaced-medium': {
-    fontFamily: fonts.body,
-    fontSize: '18px',
-    fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.medium,
-  },
   'm-spaced': {
     fontFamily: fonts.body,
     fontSize: '16px',
     fontStyle: fontStyles.normal,
     fontWeight: fontWeights.normal,
-  },
-  'm-spaced-medium': {
-    fontFamily: fonts.body,
-    fontSize: '16px',
-    fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.medium,
   },
   'm-spaced-bold': {
     fontFamily: fonts.body,
@@ -70,13 +57,6 @@ const variants = {
     fontWeight: fontWeights.bold,
     textTransform: 'uppercase',
   },
-  'm-spaced-medium-caps': {
-    fontFamily: fonts.body,
-    fontSize: '16px',
-    fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.medium,
-    textTransform: 'uppercase',
-  },
   's-spaced': {
     fontFamily: fonts.body,
     fontSize: '14px',
@@ -84,25 +64,11 @@ const variants = {
     fontWeight: fontWeights.normal,
     lineHeight: '24px',
   },
-  's-spaced-bold-caps': {
+  's-spaced-caps': {
     fontFamily: fonts.body,
     fontSize: '14px',
     fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.bold,
-    textTransform: 'uppercase',
-  },
-  's-spaced-medium': {
-    fontFamily: fonts.body,
-    fontSize: '14px',
-    fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.medium,
-    lineHeight: '16px',
-  },
-  's-spaced-medium-caps': {
-    fontFamily: fonts.body,
-    fontSize: '14px',
-    fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.medium,
+    fontWeight: fontWeights.normal,
     textTransform: 'uppercase',
   },
   'xs-spaced': {
@@ -111,13 +77,6 @@ const variants = {
     fontStyle: fontStyles.normal,
     fontWeight: fontWeights.normal,
     lineHeight: '18px',
-  },
-  'xs-spaced-medium': {
-    fontFamily: fonts.body,
-    fontSize: '12px',
-    fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.medium,
-    lineHeight: '21px',
   },
 };
 

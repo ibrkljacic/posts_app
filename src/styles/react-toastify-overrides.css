@@ -1,0 +1,20 @@
+.toast-container {
+  bottom: 16px;
+  padding: 0;
+  right: 16px;
+  width: auto;
+}
+
+.toast-message {
+  background-color: transparent;
+  border-radius: 4px;
+  box-shadow: unset;
+  margin: 0;
+  margin-top: 16px;
+  min-height: auto;
+  padding: 0;
+}
+
+.Toastify__toast {
+  min-height: unset;
+}
