@@ -41,6 +41,7 @@ function Button({
   iconLeft,
   iconRight,
   isDisabled = false,
+  isFullWidth = false,
   isLoading = false,
   size = 'm',
   sx = {},
@@ -49,13 +50,13 @@ function Button({
   onClick = () => {},
 }) {
   const { bg, border, color, hoverStyles } = variantsMap[variant];
-  const { height, iconSize, px, space, textVariant, width } = sizesMap[size];
+  const { height, iconSize, px, space, textVariant } = sizesMap[size];
 
   return (
     <FlexLayout
       as="button"
       alignItems="center"
-      justifyContent="space-between"
+      justifyContent={isFullWidth ? 'center' : 'inherit'}
       isDisabled={isDisabled || isLoading}
       px={px}
       sx={{
@@ -67,7 +68,7 @@ function Button({
         outline: 'none',
         position: 'relative',
         height,
-        width: width || 'fit-content',
+        width: isFullWidth ? '100%' : 'fit-content',
 
         '&:hover': {
           background: (theme) => `linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), ${theme.colors[bg]}`,

@@ -12,23 +12,27 @@ function IconExplorer() {
 
   return (
     <FlexLayout flexDirection="column" space={8}>
-      <FlexLayout space={8}>
-        <Text variant="m-spaced-bold">Color</Text>
-        <select value={color} onChange={(e) => setColor(e.target.value)}>
-          {colorOptions.map((color) => (
-            <option key={color} value={`${color}`}>
-              {color}
-            </option>
-          ))}
-        </select>
-        <Text variant="m-spaced-bold">Size</Text>
-        <select value={color} onChange={(e) => setSize(e.target.value)}>
-          {sizeOptions.map((size) => (
-            <option key={size} value={`${size}`}>
-              {size}
-            </option>
-          ))}
-        </select>
+      <FlexLayout alignItems="center" space={8}>
+        <FlexLayout alignItems="center" space={2}>
+          <Text variant="m-spaced-bold">Color</Text>
+          <select value={color} onChange={(e) => setColor(e.target.value)}>
+            {colorOptions.map((color) => (
+              <option key={color} value={`${color}`}>
+                {color}
+              </option>
+            ))}
+          </select>
+        </FlexLayout>
+        <FlexLayout alignItems="center" space={2}>
+          <Text variant="m-spaced-bold">Size</Text>
+          <select value={size} onChange={(e) => setSize(e.target.value)}>
+            {sizeOptions.map((size) => (
+              <option key={size} value={`${size}`}>
+                {size}
+              </option>
+            ))}
+          </select>
+        </FlexLayout>
       </FlexLayout>
       <FlexLayout flexWrap="wrap" space={2}>
         {Object.keys(icons).map((icon) => (

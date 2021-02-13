@@ -34,7 +34,7 @@ Easily render input component and control it with `value` and `onChange` callbac
 <Canvas>
   <FlexLayout flexDirection="column" space={4}>
     {Object.keys(textInputVariantsMap).map((variant) => (
-      <FlexLayout space={4}>
+      <FlexLayout key={variant} space={4}>
         <TextInputComponent label={variant} value={variant} variant={variant} onChange={alert} />
         <TextInputComponent isDisabled label={variant} value={variant} variant={variant} onChange={alert} />
       </FlexLayout>
