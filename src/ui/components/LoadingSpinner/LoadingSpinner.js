@@ -9,9 +9,10 @@ import FlexLayout from '../FlexLayout';
 const sizesMap = {
   m: '24px',
   l: '32px',
+  xl: '64px',
 };
 
-function LoadingSpinner({ color = 'black', size = 'm', sx = {} }) {
+function LoadingSpinner({ color = 'red-500', size = 'm', sx = {} }) {
   return (
     <FlexLayout alignItems="center" justifyContent="center" color={color} sx={{ ...sx }}>
       <InlineSvg height={sizesMap[size]} src={loadingSpinner} width={sizesMap[size]} />

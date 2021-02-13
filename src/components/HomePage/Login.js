@@ -1,10 +1,32 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
+import { login } from '~/api';
+import { isUserAuthenticated, setAccessToken } from '~/auth';
+import { useEnter } from '~/hooks/interaction';
+import { routesEnum } from '~/routes';
 import { Button, FlexLayout, Text, TextInput } from '~/ui';
+import { showToast } from '~/ui/components/Toast';
+
+function handleOnLoginClick({ username, password }) {
+  login({ username, password })
+    .then((res) => {
+      setAccessToken(res.accessToken);
+      window.location.reload();
+    })
+    .catch(() => showToast('Incorrect username or password!'));
+}
 
 function Login() {
+  const history = useHistory();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  useEnter(() => handleOnLoginClick({ username, password }));
+
+  if (isUserAuthenticated) {
+    history.push(routesEnum.POSTS_PAGE);
+  }
 
   return (
     <FlexLayout
@@ -14,7 +36,7 @@ function Login() {
       m="0 auto"
       p={8}
       space={6}
-      sx={{ borderRadius: 'm', boxShadow: 'depth-1', height: 'fit-content', width: 'modal-width' }}
+      sx={{ borderRadius: 's', boxShadow: 'depth-1', height: 'fit-content', width: 'modal-width' }}
     >
       <Text color="red-500" variant="3xl-spaced-bold">
         LOG IN
@@ -27,7 +49,7 @@ function Login() {
         text="Log In"
         sx={{ mt: 4 }}
         variant="secondary"
-        onClick={() => {}}
+        onClick={() => handleOnLoginClick({ username, password })}
       />
     </FlexLayout>
   );

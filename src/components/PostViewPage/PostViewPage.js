@@ -1,5 +1,7 @@
+import { PageLayout } from '~/components/Shared';
+
 function PostViewPage() {
-  return <div>Post View Page</div>;
+  return <PageLayout title="Post"></PageLayout>;
 }
 
 export default PostViewPage;

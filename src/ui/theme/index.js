@@ -5,6 +5,7 @@ import shadows from './shadows';
 import sizes from './sizes';
 import space from './space';
 import typography from './typography';
+import zIndices from './zIndices';
 
 // base colors required by theme UI
 const themeUiColors = {
@@ -26,4 +27,5 @@ export default {
   sizes,
   space,
   text: typography.variants,
+  zIndices,
 };

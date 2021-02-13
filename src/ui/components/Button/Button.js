@@ -24,7 +24,7 @@ const variantsMap = {
   primary: {
     border: 'border-gray',
     bg: 'transparent',
-    color: 'red-700',
+    color: 'gray-700',
     hoverStyles: {
       border: 'border-red',
       color: 'red-500',
@@ -34,6 +34,14 @@ const variantsMap = {
   secondary: {
     bg: 'red-500',
     color: 'white',
+  },
+  link: {
+    bg: 'transparent',
+    color: 'gray-700',
+    hoverStyles: {
+      color: 'red-500',
+      transition: 'all ease .25s',
+    },
   },
 };
 
@@ -58,7 +66,7 @@ function Button({
       alignItems="center"
       justifyContent={isFullWidth ? 'center' : 'inherit'}
       isDisabled={isDisabled || isLoading}
-      px={px}
+      px={variant === 'link' ? undefined : px}
       sx={{
         ...sx,
         ...styles.interactions.clickable,
@@ -90,7 +98,9 @@ function Button({
         <Text variant={textVariant}>{text}</Text>
         {iconRight && <Icon icon={iconRight} size={iconSize} />}
       </FlexLayout>
-      {isLoading && <LoadingSpinner size={size} sx={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0 }} />}
+      {isLoading && (
+        <LoadingSpinner color={color} size={size} sx={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0 }} />
+      )}
     </FlexLayout>
   );
 }

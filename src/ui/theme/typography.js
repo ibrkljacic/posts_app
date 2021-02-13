@@ -64,6 +64,13 @@ const variants = {
     fontWeight: fontWeights.normal,
     lineHeight: '24px',
   },
+  's-spaced-bold': {
+    fontFamily: fonts.body,
+    fontSize: '14px',
+    fontStyle: fontStyles.normal,
+    fontWeight: fontWeights.bold,
+    lineHeight: '24px',
+  },
   's-spaced-caps': {
     fontFamily: fonts.body,
     fontSize: '14px',

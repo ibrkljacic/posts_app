@@ -1,24 +1,25 @@
-import { FlexLayout, Icon, Text } from '~/ui';
+import { logout } from '~/api';
+import { removeAccessToken } from '~/auth';
+import { Button, FlexLayout, Icon } from '~/ui';
+
+function handleOnLogoutClick() {
+  logout().then(() => {
+    removeAccessToken();
+    window.location.reload();
+  });
+}
 
 function Navbar() {
   return (
     <FlexLayout
       alignItems="center"
-      flexShrink="0"
+      bg="background"
       justifyContent="space-between"
       px={8}
-      sx={{ height: '64px', position: 'sticky', top: 0, width: '100%' }}
+      sx={{ borderBottom: 'border-red', height: '64px', position: 'sticky', top: 0, width: '100%', zIndex: 'navbar' }}
     >
       <Icon color="red-500" icon="logo" size="xl" />
-      <FlexLayout
-        alignItems="center"
-        space={2}
-        sx={{ '&:hover': { color: 'red-500', transition: 'all ease .25s' } }}
-        onClick={() => {}}
-      >
-        <Icon icon="logOut" />
-        <Text variant="s-spaced">LOG OUT</Text>
-      </FlexLayout>
+      <Button iconLeft="logOut" text="LOG OUT" variant="link" onClick={handleOnLogoutClick} />
     </FlexLayout>
   );
 }

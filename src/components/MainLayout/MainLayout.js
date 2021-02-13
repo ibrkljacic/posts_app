@@ -1,5 +1,6 @@
 import { Route } from 'react-router-dom';
 
+import { isUserAuthenticated } from '~/auth';
 import ContentWindow from '~/components/ContentWindow';
 import { FlexLayout } from '~/ui';
 import { ToastMessageContainer } from '~/ui/components/Toast';
@@ -11,9 +12,9 @@ function MainLayout() {
   return (
     <>
       <FlexLayout alignItems="center" flexDirection="column" sx={{ minHeight: '100vh' }}>
-        <Route path="*" component={Navbar} />
+        {isUserAuthenticated && <Navbar />}
         <ContentWindow />
-        <Route path="*" component={Footer} />
+        {isUserAuthenticated && <Footer />}
       </FlexLayout>
       <ToastMessageContainer />
     </>

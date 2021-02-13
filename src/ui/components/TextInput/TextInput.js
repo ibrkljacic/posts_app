@@ -7,11 +7,13 @@ import { withLabel } from '~/ui/hocs';
 const variantsMap = {
   primary: {
     iconLeft: null,
-    pl: 0,
+    pl: 3,
+    pr: 3,
   },
   searchable: {
     iconLeft: 'search',
-    pl: 8,
+    pl: 11,
+    pr: 3,
   },
 };
 
@@ -24,7 +26,7 @@ function TextInput({
   variant = 'primary',
   onChange = () => {},
 }) {
-  const { iconLeft, pl } = variantsMap[variant];
+  const { iconLeft, pl, pr } = variantsMap[variant];
 
   return (
     <FlexLayout
@@ -36,11 +38,9 @@ function TextInput({
         ...sx,
         ...styles.interactions.clickable,
         border: 'border-gray',
-        borderRadius: 's',
         height: 'input-m-height',
         width: '100%',
         position: 'relative',
-        px: 3,
 
         '&:focus-within': {
           borderColor: 'red-500',
@@ -49,7 +49,7 @@ function TextInput({
         },
       }}
     >
-      {iconLeft && <Icon icon="search" sx={{ position: 'absolute', left: '12px', zIndex: 1 }} />}
+      {iconLeft && <Icon icon="search" sx={{ position: 'absolute', left: '12px' }} />}
       <Box
         as="input"
         placeholder={placeholder}
@@ -57,13 +57,13 @@ function TextInput({
           ...theme.text['m-spaced'],
           bg: 'transparent',
           border: 'none',
-          borderRadius: 'm',
           caretColor: 'red-500',
           flexGrow: '1',
           height: '100%',
           outline: 'none',
           pl,
-          zIndex: 2,
+          pr,
+          zIndex: 'default',
 
           '::placeholder': {
             color: 'gray-600',

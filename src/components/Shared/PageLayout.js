@@ -1,10 +1,17 @@
-import { FlexLayout, Text } from '~/ui';
+import { Box, FlexLayout, Text } from '~/ui';
 
 function PageLayout({ children, sx = {}, title }) {
   return (
-    <FlexLayout color="gray-700" flexGrow="1" my={8} sx={{ width: 'page-size', ...sx }}>
+    <FlexLayout
+      color="gray-700"
+      flexDirection="column"
+      flexGrow="1"
+      py={8}
+      space={8}
+      sx={{ width: 'page-size', zIndex: 'page', ...sx }}
+    >
       {title && <Text variant="3xl-spaced-bold">{title}</Text>}
-      {children}
+      <Box>{children}</Box>
     </FlexLayout>
   );
 }

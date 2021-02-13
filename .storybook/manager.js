@@ -3,9 +3,8 @@ import { create } from '@storybook/theming/create';
 
 import colors from '../src/ui/theme/colors';
 
-import './index.css';
-
 const theme = create({
+  base: 'light',
   colorSecondary: colors['red-500'],
   textColor: colors['black']
 });

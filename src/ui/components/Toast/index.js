@@ -9,7 +9,7 @@ import Toast from './Toast';
 export function ToastMessageContainer() {
   return (
     <ToastContainer
-      autoClose={3000}
+      autoClose={2500}
       className="toast-container"
       closeButton={false}
       closeOnClick
