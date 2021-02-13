@@ -1,10 +1,17 @@
+import { Route } from 'react-router-dom';
+
 import ContentWindow from '~/components/ContentWindow';
 import { FlexLayout } from '~/ui';
 
+import Footer from './Footer';
+import Navbar from './Navbar';
+
 function MainLayout() {
   return (
-    <FlexLayout sx={{ bottom: 0, left: 0, position: 'fixed', right: 0, top: 0 }}>
+    <FlexLayout alignItems="center" flexDirection="column" sx={{ minHeight: '100vh' }}>
+      <Route path="*" component={Navbar} />
       <ContentWindow />
+      <Route path="*" component={Footer} />
     </FlexLayout>
   );
 }

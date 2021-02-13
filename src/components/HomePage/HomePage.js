@@ -1,5 +1,7 @@
+import { PageLayout } from '~/components/Shared';
+
 function HomePage() {
-  return <div>Home Page</div>;
+  return <PageLayout>Home Page</PageLayout>;
 }
 
 export default HomePage;
