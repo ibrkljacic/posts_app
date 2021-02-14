@@ -3,3 +3,12 @@ body,
 #root {
   font-family: 'Roboto', sans-serif;
 }
+
+::selection {
+  background: #ef4059; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: #ef4059; /* Gecko Browsers */
+  color: white;
+}

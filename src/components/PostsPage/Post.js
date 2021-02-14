@@ -13,11 +13,11 @@ function Post({ post }) {
 
   return (
     <FlexLayout flexDirection="column" key={id} p={4} space={8} sx={{ boxShadow: 'depth-1' }}>
-      <FlexLayout alignItems="flex-start" space={10}>
+      <FlexLayout alignItems="flex-start" justifyContent="space-between" space={10}>
         <Text
           color="red-500"
           variant="2xl-spaced-bold"
-          sx={{ flexGrow: '1', '&:hover': { textDecoration: 'underline' } }}
+          sx={{ '&:hover': { textDecoration: 'underline' } }}
           onClick={() => history.push(`/post/${id}`)}
         >
           {capitalize(title)}
@@ -26,7 +26,9 @@ function Post({ post }) {
           {user.name}
         </Text>
       </FlexLayout>
-      <Text variant="m-spaced-bold">{body}</Text>
+      <Text textAlign="justify" variant="m-spaced-bold" sx={{ textIndent: '24px' }}>
+        {capitalize(body)}
+      </Text>
       <FlexLayout flexDirection="column" space={2}>
         <Button
           iconLeft={showComments ? 'chevronUp' : 'chevronDown'}
