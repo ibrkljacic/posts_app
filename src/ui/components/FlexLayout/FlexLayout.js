@@ -1,44 +1,51 @@
 import PT from 'prop-types';
+import React from 'react';
 
 import { Box } from '~/ui';
 
-function FlexLayout({
-  alignItems,
-  children,
-  flex,
-  flexDirection,
-  flexGrow,
-  flexShrink,
-  flexWrap,
-  justifyContent,
-  space = 0,
-  sx = {},
-  ...rest
-}) {
-  const marginDirection = flexDirection === 'column' ? 'mb' : 'mr';
+const FlexLayout = React.forwardRef(
+  (
+    {
+      alignItems,
+      children,
+      flex,
+      flexDirection,
+      flexGrow,
+      flexShrink,
+      flexWrap,
+      justifyContent,
+      space = 0,
+      sx = {},
+      ...rest
+    },
+    ref
+  ) => {
+    const marginDirection = flexDirection === 'column' ? 'mb' : 'mr';
 
-  return (
-    <Box
-      sx={{
-        ...sx,
-        alignItems,
-        display: 'flex',
-        flex,
-        flexDirection,
-        flexGrow,
-        flexShrink,
-        flexWrap,
-        justifyContent,
-        '> :not(:last-child)': {
-          [marginDirection]: space,
-        },
-      }}
-      {...rest}
-    >
-      {children}
-    </Box>
-  );
-}
+    return (
+      <Box
+        ref={ref}
+        sx={{
+          ...sx,
+          alignItems,
+          display: 'flex',
+          flex,
+          flexDirection,
+          flexGrow,
+          flexShrink,
+          flexWrap,
+          justifyContent,
+          '> :not(:last-child)': {
+            [marginDirection]: space,
+          },
+        }}
+        {...rest}
+      >
+        {children}
+      </Box>
+    );
+  }
+);
 
 FlexLayout.propTypes = {
   alignItems: PT.string,

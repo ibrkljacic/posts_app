@@ -1,0 +1,47 @@
+import { ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { Button, FlexLayout, Icon } from '~/ui';
+
+import Menu from './Menu';
+
+<Meta title="Components/Input/Menu" component={Menu} />
+
+# Menu
+
+`Menu` is an input control that is used to present selectable options in a dropdown form.
+
+## Props
+
+`Menu` needs an anchor element and the set of options.
+
+<ArgsTable of={Menu} />
+
+## Use
+
+<Canvas>
+  <FlexLayout justifyContent="flex-end" sx={{ height: '200px' }}>
+    <Menu
+      anchorElement={<Icon icon="menu" size="l" />}
+      options={[
+        { icon: 'user', text: 'My Profile', onClick: () => alert('My Profile') },
+        { icon: 'logOut', text: 'Log Out', onClick: () => alert('Log Out') },
+      ]}
+    />
+  </FlexLayout>
+</Canvas>
+
+## Behaviors
+
+`Switch` supports a number of useful behaviors usable in various UI layouts and features.
+
+<Canvas>
+  <FlexLayout justifyContent="flex-end" sx={{ height: '200px' }}>
+    <Menu
+      anchorElement={<Button text="Anchor element" onClick={() => {}} />}
+      options={[
+        { text: 'Option 1', onClick: () => alert('My Profile') },
+        { text: 'Option 2', onClick: () => alert('Log Out') },
+      ]}
+    />
+  </FlexLayout>
+</Canvas>

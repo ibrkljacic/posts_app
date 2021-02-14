@@ -2,7 +2,7 @@ import { useColorMode } from 'theme-ui';
 
 import { logout } from '~/api';
 import { removeAccessToken } from '~/auth';
-import { Button, FlexLayout, Icon, Switch } from '~/ui';
+import { FlexLayout, Icon, Menu, Switch } from '~/ui';
 
 function handleOnLogoutClick() {
   logout().then(() => {
@@ -29,7 +29,13 @@ function Navbar() {
           value={colorMode === 'default'}
           onChange={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}
         />
-        <Button iconLeft="logOut" size="s" text="LOG OUT" variant="link" onClick={handleOnLogoutClick} />
+        <Menu
+          anchorElement={<Icon icon="menu" size="l" />}
+          options={[
+            { icon: 'user', text: 'My Profile', onClick: () => console.log('TODO') },
+            { icon: 'logOut', text: 'Log Out', onClick: handleOnLogoutClick },
+          ]}
+        />
       </FlexLayout>
     </FlexLayout>
   );

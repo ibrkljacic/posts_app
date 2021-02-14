@@ -6,7 +6,7 @@ import { withLabel } from '~/ui/hocs';
 
 const variantsMap = {
   primary: {
-    borderStyles: { borderBottom: 'border-gray' },
+    borderStyles: { borderBottom: 'border-gray-light' },
     iconLeft: null,
     pl: 3,
     pr: 3,
