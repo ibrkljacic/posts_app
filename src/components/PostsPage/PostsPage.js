@@ -42,7 +42,7 @@ function PostsPage() {
             ))}
           </FlexLayout>
         ) : (
-          <Text color="gray-600" variant="m-spaced">
+          <Text color="red-500" variant="m-spaced">
             No posts match your filter.
           </Text>
         )}
