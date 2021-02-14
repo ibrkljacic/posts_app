@@ -6,5 +6,7 @@ export { default as close } from './close.svg';
 export { default as loadingSpinner } from './loading-spinner.svg';
 export { default as logo } from './logo.svg';
 export { default as logOut } from './logout.svg';
+export { default as moon } from './moon.svg';
 export { default as search } from './search.svg';
+export { default as sun } from './sun.svg';
 export { default as user } from './user.svg';

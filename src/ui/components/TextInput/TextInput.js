@@ -12,7 +12,7 @@ const variantsMap = {
     pr: 3,
   },
   searchable: {
-    bg: 'gray-400',
+    borderStyles: { borderBottom: 'border-gray-light' },
     iconLeft: 'search',
     pl: 11,
     pr: 3,
@@ -28,12 +28,12 @@ function TextInput({
   variant = 'primary',
   onChange = () => {},
 }) {
-  const { bg, borderStyles, iconLeft, pl, pr } = variantsMap[variant];
+  const { borderStyles, iconLeft, pl, pr } = variantsMap[variant];
 
   return (
     <FlexLayout
       alignItems="center"
-      bg={bg || 'transparent'}
+      bg={'transparent'}
       isDisabled={isDisabled}
       space={2}
       sx={{
@@ -58,6 +58,7 @@ function TextInput({
         sx={{
           ...theme.text['m-spaced'],
           bg: 'transparent',
+          color: 'text',
           border: 'none',
           caretColor: 'red-500',
           flexGrow: '1',

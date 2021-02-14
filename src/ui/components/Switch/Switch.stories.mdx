@@ -1,0 +1,46 @@
+import { ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { Box, FlexLayout } from '~/ui';
+
+import Switch from './Switch';
+
+<Meta title="Components/Input/Switch" component={Switch} />
+
+# Switch
+
+`Switch` is an input control that is used to quickly switch between two possible states.
+
+## Props
+
+`Switch` is a controlled component which exposes `value` and `onChange` props.
+
+<ArgsTable of={Switch} />
+
+## Use
+
+Easily render switch component and control it with `value` and `onChange` callback which returns newly updated value.
+
+<Canvas>
+  <Switch label="Active" value={true} onChange={() => {}} />
+</Canvas>
+
+## Behaviors
+
+`Switch` supports a number of useful behaviors usable in various UI layouts and features.
+
+<Canvas>
+  <FlexLayout flexDirection="column" space={4}>
+    <FlexLayout alignItems="center" space={8}>
+      <Switch label="Active" value={true} onChange={() => {}} />
+      <Switch isDisabled label="Active" value={true} onChange={() => {}} />
+    </FlexLayout>
+    <FlexLayout alignItems="center" space={8}>
+      <Switch label="Inactive" value={false} onChange={() => {}} />
+      <Switch isDisabled label="Inactive" value={false} onChange={() => {}} />
+    </FlexLayout>
+    <FlexLayout alignItems="center" space={8}>
+      <Switch icon="sun" label="With defined icon" value={true} onChange={() => {}} />
+      <Switch isDisabled icon="sun" label="With defined icon" value={true} onChange={() => {}} />
+    </FlexLayout>
+  </FlexLayout>
+</Canvas>

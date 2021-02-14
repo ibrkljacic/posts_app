@@ -30,7 +30,6 @@ const sizesMap = {
 const variantsMap = {
   primary: {
     border: 'border-gray',
-    bg: 'transparent',
     color: 'gray-700',
     hoverStyles: {
       border: 'border-red',
@@ -43,8 +42,7 @@ const variantsMap = {
     color: 'white',
   },
   link: {
-    bg: 'transparent',
-    color: 'gray-700',
+    color: 'text',
     hoverStyles: {
       color: 'red-500',
       transition: 'all ease .15s',
@@ -77,7 +75,7 @@ function Button({
       sx={{
         ...sx,
         ...styles.interactions.clickable,
-        bg,
+        bg: bg || 'transparent',
         border: border || 'unset',
         color,
         outline: 'none',

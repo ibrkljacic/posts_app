@@ -10,12 +10,14 @@ import zIndices from './zIndices';
 // base colors required by theme UI
 const themeUiColors = {
   background: colors.white,
+  primary: colors['gray-400'],
   text: colors['gray-700'],
 
   modes: {
     dark: {
       background: colors['gray-700'],
-      text: colors.white,
+      primary: colors['gray-500'],
+      text: colors['gray-400'],
     },
   },
 };

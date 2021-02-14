@@ -2,22 +2,8 @@ import capitalize from 'lodash/capitalize';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { Comment } from '~/components/Shared';
 import { Button, FlexLayout, Text } from '~/ui';
-
-function Comment({ comment }) {
-  const { body, email } = comment;
-
-  return (
-    <FlexLayout bg="gray-400" flexDirection="column" space={2} p={4} sx={{ borderRadius: 'm' }}>
-      <Text color="gray-600" variant="s-spaced-bold">
-        {email}
-      </Text>
-      <Text color="black" variant="s-spaced">
-        {body}
-      </Text>
-    </FlexLayout>
-  );
-}
 
 function Post({ post }) {
   const history = useHistory();
@@ -26,7 +12,7 @@ function Post({ post }) {
   const { body, comments, id, title, user } = post;
 
   return (
-    <FlexLayout flexDirection="column" key={id} p={4} space={8} sx={{ boxShadow: 'depth-1-gray' }}>
+    <FlexLayout flexDirection="column" key={id} p={4} space={8} sx={{ boxShadow: 'depth-1' }}>
       <FlexLayout alignItems="flex-start" space={10}>
         <Text
           color="red-500"

@@ -3,14 +3,15 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getPost } from '~/api';
-import { PageLayout } from '~/components/Shared';
-import { Box, FlexLayout, LoadingSpinner, Text } from '~/ui';
+import { Comment, PageLayout } from '~/components/Shared';
+import { Box, Button, FlexLayout, LoadingSpinner, Text } from '~/ui';
 import { showToast } from '~/ui/components/Toast';
 
 function PostViewPage() {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [post, setPost] = useState([]);
+  const [showComments, setShowComments] = useState(true);
 
   useEffect(() => {
     getPost(postId)
@@ -34,32 +35,20 @@ function PostViewPage() {
         <Box bg="gray-500" sx={{ height: '1px' }} />
         <Text variant="l-spaced-bold">{capitalize(body)}</Text>
         <Box bg="gray-500" sx={{ height: '1px' }} />
-        <FlexLayout flexDirection="column" space={4}>
-          <Text color="red-500" variant="s-spaced-bold">
-            Comments
-          </Text>
-          {comments.map((comment) => {
-            const { body, email } = comment;
-
-            return (
-              <FlexLayout
-                bg="gray-400"
-                flexDirection="column"
-                key={comment.id}
-                space={2}
-                p={4}
-                sx={{ borderRadius: 'm' }}
-              >
-                <Text color="gray-600" variant="s-spaced-bold">
-                  {email}
-                </Text>
-                <Text color="black" variant="s-spaced">
-                  {body}
-                </Text>
-              </FlexLayout>
-            );
-          })}
-        </FlexLayout>
+        <Button
+          iconRight={showComments ? 'chevronUp' : 'chevronDown'}
+          size="s"
+          text="Comments"
+          variant="link"
+          onClick={() => setShowComments(!showComments)}
+        />
+        {showComments && (
+          <FlexLayout flexDirection="column" space={4}>
+            {comments.map((comment) => (
+              <Comment comment={comment} key={comment.id} />
+            ))}
+          </FlexLayout>
+        )}
       </FlexLayout>
     </PageLayout>
   );
