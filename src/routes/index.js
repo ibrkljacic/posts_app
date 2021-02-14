@@ -5,7 +5,7 @@ import PostViewPage from '~/components/PostViewPage';
 export const routesEnum = {
   HOME_PAGE: '/',
   POSTS_PAGE: '/app',
-  POST_VIEW_PAGE: '/post/:id',
+  POST_VIEW_PAGE: '/post/:postId',
 };
 
 export default {

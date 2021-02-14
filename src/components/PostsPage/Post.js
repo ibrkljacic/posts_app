@@ -1,3 +1,4 @@
+import capitalize from 'lodash/capitalize';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ function Comment({ comment }) {
   const { body, email } = comment;
 
   return (
-    <FlexLayout bg="gray-400" flexDirection="column" space={2} p={4}>
+    <FlexLayout bg="gray-400" flexDirection="column" space={2} p={4} sx={{ borderRadius: 'm' }}>
       <Text color="gray-600" variant="s-spaced-bold">
         {email}
       </Text>
@@ -26,22 +27,20 @@ function Post({ post }) {
 
   return (
     <FlexLayout flexDirection="column" key={id} p={4} space={8} sx={{ boxShadow: 'depth-1-gray' }}>
-      <FlexLayout alignItems="flex-start" space={15}>
+      <FlexLayout alignItems="flex-start" space={10}>
         <Text
           color="red-500"
           variant="2xl-spaced-bold"
-          sx={{ flexGrow: '1' }}
+          sx={{ flexGrow: '1', '&:hover': { textDecoration: 'underline' } }}
           onClick={() => history.push(`/post/${id}`)}
         >
-          {title}
+          {capitalize(title)}
         </Text>
         <Text color="gray-600" variant="m-spaced-bold" sx={{ flexShrink: '0' }}>
           {user.name}
         </Text>
       </FlexLayout>
-      <Text variant="m-spaced-bold" sx={{ textIndent: '24px' }}>
-        {body}
-      </Text>
+      <Text variant="m-spaced-bold">{body}</Text>
       <FlexLayout flexDirection="column" space={2}>
         <Button
           iconLeft={showComments ? 'chevronUp' : 'chevronDown'}

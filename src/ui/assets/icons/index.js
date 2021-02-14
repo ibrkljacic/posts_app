@@ -1,3 +1,4 @@
+export { default as arrowLeft } from './arrow-left.svg';
 export { default as arrowRight } from './arrow-right.svg';
 export { default as chevronDown } from './chevron-down.svg';
 export { default as chevronUp } from './chevron-up.svg';

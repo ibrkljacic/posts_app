@@ -30,24 +30,24 @@ function Login() {
 
   return (
     <FlexLayout
-      alignItems="center"
-      bg="white"
+      bg="transparent"
       flexDirection="column"
       m="0 auto"
       p={8}
-      space={6}
-      sx={{ borderRadius: 's', boxShadow: 'depth-1-gray', height: 'fit-content', width: 'modal-width' }}
+      space={8}
+      sx={{ borderRadius: 's', boxShadow: 'depth-1-gray', maxWidth: 'modal-width' }}
     >
-      <Text color="red-500" variant="3xl-spaced-bold">
+      <Text color="red-500" textAlign="center" variant="3xl-spaced-bold">
         LOG IN
       </Text>
-      <TextInput label="Username" value={username} onChange={setUsername} />
-      <TextInput label="Password" type="password" value={password} onChange={setPassword} />
+      <FlexLayout flexDirection="column" flexGrow="1" space={6}>
+        <TextInput label="Username" value={username} onChange={setUsername} />
+        <TextInput label="Password" type="password" value={password} onChange={setPassword} />
+      </FlexLayout>
       <Button
         isDisabled={!username.length || !password.length}
         isFullWidth
         text="Log In"
-        sx={{ mt: 4 }}
         variant="secondary"
         onClick={() => handleOnLoginClick({ username, password })}
       />

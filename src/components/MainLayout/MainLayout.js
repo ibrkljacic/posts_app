@@ -1,5 +1,3 @@
-import { Route } from 'react-router-dom';
-
 import { isUserAuthenticated } from '~/auth';
 import ContentWindow from '~/components/ContentWindow';
 import { FlexLayout } from '~/ui';

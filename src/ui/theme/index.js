@@ -11,6 +11,7 @@ import zIndices from './zIndices';
 const themeUiColors = {
   background: colors.white,
   text: colors['gray-700'],
+
   modes: {
     dark: {
       background: colors['gray-700'],

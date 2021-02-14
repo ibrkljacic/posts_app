@@ -31,6 +31,13 @@ const variants = {
     fontWeight: fontWeights.bold,
     lineHeight: '26px',
   },
+  'l-spaced-bold': {
+    fontFamily: fonts.body,
+    fontSize: '20px',
+    fontStyle: fontStyles.normal,
+    fontWeight: fontWeights.normal,
+    lineHeight: '32px',
+  },
   'l-spaced-bold-caps': {
     fontFamily: fonts.body,
     fontSize: '20px',

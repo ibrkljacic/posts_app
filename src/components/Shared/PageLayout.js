@@ -1,21 +1,29 @@
-import { Box, FlexLayout, Text } from '~/ui';
+import capitalize from 'lodash/capitalize';
+import { useHistory } from 'react-router-dom';
 
-function PageLayout({ children, sx = {}, title }) {
+import { Box, Button, FlexLayout, Text } from '~/ui';
+
+function PageLayout({ children, hasBack = false, title }) {
+  const history = useHistory();
+
   return (
     <FlexLayout
-      color="gray-700"
       flexDirection="column"
       flexGrow="1"
+      px={4}
       py={8}
-      space={8}
-      sx={{ width: 'page-size', zIndex: 'page', ...sx }}
+      space={10}
+      sx={{ maxWidth: 'page-size', width: '100%', zIndex: 'page' }}
     >
-      {title && (
-        <Text as="h1" variant="3xl-spaced-bold">
-          {title}
-        </Text>
-      )}
-      <Box sx={{ flexGrow: '1' }}>{children}</Box>
+      <FlexLayout flexDirection="column" space={4}>
+        {hasBack && <Button iconLeft="arrowLeft" text="Back" variant="link" onClick={history.goBack} />}
+        {title && (
+          <Text as="h1" variant="3xl-spaced-bold">
+            {capitalize(title)}
+          </Text>
+        )}
+      </FlexLayout>
+      <Box>{children}</Box>
     </FlexLayout>
   );
 }

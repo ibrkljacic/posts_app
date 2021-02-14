@@ -20,7 +20,7 @@ function PostsPage() {
   }, []);
 
   const filteredPosts = posts.filter((post) => post.user.name.toLowerCase().includes(filterValue.toLowerCase()));
-  console.log('filter');
+
   return isLoading ? (
     <FlexLayout justifyContent="center" flexGrow="1">
       <LoadingSpinner color="red-500" size="xl" />
@@ -29,7 +29,7 @@ function PostsPage() {
     <PageLayout title="Posts">
       <TextInput
         placeholder="Filter posts by user"
-        sx={{ mb: 12, width: 'modal-width' }}
+        sx={{ mb: 12 }}
         value={filterValue}
         variant="searchable"
         onChange={setFilterValue}
