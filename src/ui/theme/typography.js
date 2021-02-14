@@ -31,24 +31,27 @@ const variants = {
     fontWeight: fontWeights.bold,
     lineHeight: '26px',
   },
-  '2l-spaced': {
+  'l-spaced-bold-caps': {
     fontFamily: fonts.body,
     fontSize: '20px',
     fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.bold,
     lineHeight: '24px',
+    textTransform: 'uppercase',
   },
   'm-spaced': {
     fontFamily: fonts.body,
     fontSize: '16px',
     fontStyle: fontStyles.normal,
     fontWeight: fontWeights.normal,
+    lineHeight: '24px',
   },
   'm-spaced-bold': {
     fontFamily: fonts.body,
     fontSize: '16px',
     fontStyle: fontStyles.normal,
     fontWeight: fontWeights.bold,
+    lineHeight: '24px',
   },
   'm-spaced-bold-caps': {
     fontFamily: fonts.body,
@@ -56,6 +59,7 @@ const variants = {
     fontStyle: fontStyles.normal,
     fontWeight: fontWeights.bold,
     textTransform: 'uppercase',
+    lineHeight: '24px',
   },
   's-spaced': {
     fontFamily: fonts.body,
@@ -71,11 +75,11 @@ const variants = {
     fontWeight: fontWeights.bold,
     lineHeight: '24px',
   },
-  's-spaced-caps': {
+  's-spaced-bold-caps': {
     fontFamily: fonts.body,
     fontSize: '14px',
     fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.bold,
     textTransform: 'uppercase',
   },
   'xs-spaced': {

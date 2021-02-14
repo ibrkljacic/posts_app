@@ -10,8 +10,12 @@ function PageLayout({ children, sx = {}, title }) {
       space={8}
       sx={{ width: 'page-size', zIndex: 'page', ...sx }}
     >
-      {title && <Text variant="3xl-spaced-bold">{title}</Text>}
-      <Box>{children}</Box>
+      {title && (
+        <Text as="h1" variant="3xl-spaced-bold">
+          {title}
+        </Text>
+      )}
+      <Box sx={{ flexGrow: '1' }}>{children}</Box>
     </FlexLayout>
   );
 }

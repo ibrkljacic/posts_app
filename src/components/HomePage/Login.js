@@ -36,7 +36,7 @@ function Login() {
       m="0 auto"
       p={8}
       space={6}
-      sx={{ borderRadius: 's', boxShadow: 'depth-1', height: 'fit-content', width: 'modal-width' }}
+      sx={{ borderRadius: 's', boxShadow: 'depth-1-gray', height: 'fit-content', width: 'modal-width' }}
     >
       <Text color="red-500" variant="3xl-spaced-bold">
         LOG IN

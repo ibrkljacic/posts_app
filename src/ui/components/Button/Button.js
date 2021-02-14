@@ -4,6 +4,13 @@ import { FlexLayout, Icon, LoadingSpinner, styles, Text } from '~/ui';
 import { iconKeyPropTypes } from '~/ui/components/Icon';
 
 const sizesMap = {
+  s: {
+    height: 'input-s-height',
+    iconSize: 'xs',
+    px: 2,
+    space: 2,
+    textVariant: 's-spaced-bold-caps',
+  },
   m: {
     height: 'input-m-height',
     iconSize: 's',
@@ -16,7 +23,7 @@ const sizesMap = {
     iconSize: 'm',
     px: 4,
     space: 2,
-    textVariant: 'm-spaced-bold-caps',
+    textVariant: 'l-spaced-bold-caps',
   },
 };
 
@@ -28,7 +35,7 @@ const variantsMap = {
     hoverStyles: {
       border: 'border-red',
       color: 'red-500',
-      transition: 'all ease .25s',
+      transition: 'all ease .15s',
     },
   },
   secondary: {
@@ -40,7 +47,7 @@ const variantsMap = {
     color: 'gray-700',
     hoverStyles: {
       color: 'red-500',
-      transition: 'all ease .25s',
+      transition: 'all ease .15s',
     },
   },
 };
@@ -66,7 +73,7 @@ function Button({
       alignItems="center"
       justifyContent={isFullWidth ? 'center' : 'inherit'}
       isDisabled={isDisabled || isLoading}
-      px={variant === 'link' ? undefined : px}
+      px={variant === 'link' ? 0 : px}
       sx={{
         ...sx,
         ...styles.interactions.clickable,
@@ -75,7 +82,7 @@ function Button({
         color,
         outline: 'none',
         position: 'relative',
-        height,
+        height: variant === 'link' ? 'fit-content' : height,
         width: isFullWidth ? '100%' : 'fit-content',
 
         '&:hover': {

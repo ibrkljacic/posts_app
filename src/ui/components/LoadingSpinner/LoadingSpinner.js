@@ -7,6 +7,7 @@ import loadingSpinner from '~/ui/assets/icons/loading-spinner.svg';
 import FlexLayout from '../FlexLayout';
 
 const sizesMap = {
+  s: '20px',
   m: '24px',
   l: '32px',
   xl: '64px',
