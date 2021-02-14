@@ -1,7 +1,9 @@
+import { useHistory } from 'react-router-dom';
 import { useColorMode } from 'theme-ui';
 
 import { logout } from '~/api';
 import { removeAccessToken } from '~/auth';
+import { routesEnum } from '~/routes';
 import { FlexLayout, Icon, Menu, Switch } from '~/ui';
 
 function handleOnLogoutClick() {
@@ -13,6 +15,7 @@ function handleOnLogoutClick() {
 
 function Navbar() {
   const [colorMode, setColorMode] = useColorMode();
+  const history = useHistory();
 
   return (
     <FlexLayout
@@ -22,7 +25,7 @@ function Navbar() {
       px={8}
       sx={{ borderBottom: 'border-red', height: '64px', position: 'sticky', top: 0, width: '100%', zIndex: 'navbar' }}
     >
-      <Icon color="red-500" icon="logo" size="xl" />
+      <Icon color="red-500" icon="logo" size="xl" onClick={() => history.push(routesEnum.HOME_PAGE)} />
       <FlexLayout alignItems="center" space={8}>
         <Switch
           icon={colorMode === 'default' ? 'sun' : 'moon'}
