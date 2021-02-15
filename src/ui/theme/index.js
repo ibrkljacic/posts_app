@@ -17,7 +17,7 @@ const themeUiColors = {
     dark: {
       background: colors['gray-700'],
       primary: colors['gray-500'],
-      text: colors['gray-400'],
+      text: colors['gray-500'],
     },
   },
 };

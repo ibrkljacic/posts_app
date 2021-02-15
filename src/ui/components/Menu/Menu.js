@@ -57,7 +57,7 @@ function Menu({ anchorElement, options = [] }) {
                 }}
                 onClick={onClick}
               >
-                <Icon icon={icon} size="xs" />
+                {icon && <Icon icon={icon} size="xs" />}
                 <Text variant="s-spaced-bold-caps">{text}</Text>
               </FlexLayout>
             );
