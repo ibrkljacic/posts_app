@@ -66,7 +66,6 @@ const variants = {
     fontStyle: fontStyles.normal,
     fontWeight: fontWeights.bold,
     textTransform: 'uppercase',
-    lineHeight: '24px',
   },
   's-spaced': {
     fontFamily: fonts.body,

@@ -8,21 +8,21 @@ import { routesEnum } from '~/routes';
 import { Button, FlexLayout, Text, TextInput } from '~/ui';
 import { showToast } from '~/ui/components/Toast';
 
-function handleOnLoginClick({ username, password }) {
-  login({ username, password })
+function handleOnLoginClick({ email, password }) {
+  login({ email, password })
     .then((res) => {
       setAccessToken(res.accessToken);
       window.location.reload();
     })
-    .catch(() => showToast('Incorrect username or password!'));
+    .catch(() => showToast('Incorrect email or password!'));
 }
 
 function Login() {
   const history = useHistory();
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  useEnter(() => handleOnLoginClick({ username, password }));
+  useEnter(() => handleOnLoginClick({ email, password }));
 
   if (isUserAuthenticated) {
     history.push(routesEnum.POSTS_PAGE);
@@ -41,15 +41,15 @@ function Login() {
         LOG IN
       </Text>
       <FlexLayout flexDirection="column" flexGrow="1" space={6}>
-        <TextInput label="Username" value={username} onChange={setUsername} />
+        <TextInput label="Email" type="email" value={email} onChange={setEmail} />
         <TextInput label="Password" type="password" value={password} onChange={setPassword} />
       </FlexLayout>
       <Button
-        isDisabled={!username.length || !password.length}
+        isDisabled={!email.length || !password.length}
         isFullWidth
         text="Log In"
         variant="secondary"
-        onClick={() => handleOnLoginClick({ username, password })}
+        onClick={() => handleOnLoginClick({ email, password })}
       />
     </FlexLayout>
   );
