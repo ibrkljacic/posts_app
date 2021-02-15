@@ -33,7 +33,7 @@ function TextInput({
   return (
     <FlexLayout
       alignItems="center"
-      bg={'transparent'}
+      bg="transparent"
       isDisabled={isDisabled}
       space={2}
       sx={{

@@ -37,7 +37,7 @@ function Login() {
       space={8}
       sx={{ borderRadius: 's', boxShadow: 'depth-1', maxWidth: 'modal-width' }}
     >
-      <Text color="red-500" textAlign="center" variant="3xl-spaced-bold">
+      <Text textAlign="center" variant="3xl-spaced-bold">
         LOG IN
       </Text>
       <FlexLayout flexDirection="column" flexGrow="1" space={6}>

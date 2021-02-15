@@ -5,7 +5,7 @@ function withLabel(WrappedComponent) {
     return (
       <FlexLayout flexDirection="column" space={2} sx={{ width: '100%' }}>
         {label && (
-          <Text color="red-500" variant="s-spaced-bold-caps">
+          <Text color="text" variant="s-spaced-bold-caps">
             {label}
           </Text>
         )}

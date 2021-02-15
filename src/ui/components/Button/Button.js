@@ -8,8 +8,8 @@ const sizesMap = {
     height: 'input-s-height',
     iconSize: 'xs',
     px: 2,
-    space: 2,
-    textVariant: 's-spaced-bold-caps',
+    space: 1,
+    textVariant: 'xs-spaced-bold-caps',
   },
   m: {
     height: 'input-m-height',

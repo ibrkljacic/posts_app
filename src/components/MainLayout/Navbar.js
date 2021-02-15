@@ -35,7 +35,7 @@ function Navbar() {
         <Menu
           anchorElement={<Icon icon="menu" size="l" />}
           options={[
-            { icon: 'user', text: 'My Profile', onClick: () => console.log('TODO') },
+            { icon: 'user', text: 'My Profile', onClick: () => alert('TODO') },
             { icon: 'logOut', text: 'Log Out', onClick: handleOnLogoutClick },
           ]}
         />

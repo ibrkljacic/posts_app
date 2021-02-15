@@ -89,12 +89,13 @@ const variants = {
     fontWeight: fontWeights.bold,
     textTransform: 'uppercase',
   },
-  'xs-spaced': {
+  'xs-spaced-bold-caps': {
     fontFamily: fonts.body,
     fontSize: '12px',
     fontStyle: fontStyles.normal,
-    fontWeight: fontWeights.normal,
+    fontWeight: fontWeights.bold,
     lineHeight: '18px',
+    textTransform: 'uppercase',
   },
 };
 

@@ -12,31 +12,20 @@ function Post({ post }) {
   const { body, comments, id, title, user } = post;
 
   return (
-    <FlexLayout
-      flexDirection="column"
-      key={id}
-      p={4}
-      space={8}
-      sx={{
-        boxShadow: 'depth-1',
-        // background: (theme) =>
-        //   `linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), ${theme.colors['background']}`,
-      }}
-    >
-      <FlexLayout alignItems="flex-start" justifyContent="space-between" space={10}>
+    <FlexLayout flexDirection="column" key={id} p={4} space={6} sx={{ boxShadow: 'depth-1' }}>
+      <FlexLayout flexDirection="column" space={4}>
         <Text
-          color="red-500"
           variant="2xl-spaced-bold"
           sx={{ '&:hover': { textDecoration: 'underline' } }}
           onClick={() => history.push(`/post/${id}`)}
         >
           {capitalize(title)}
         </Text>
-        <Text color="gray-600" variant="m-spaced-bold" sx={{ flexShrink: '0' }}>
+        <Text color="red-500" variant="m-spaced-bold" sx={{ flexShrink: '0' }}>
           {user.name}
         </Text>
       </FlexLayout>
-      <Text textAlign="justify" variant="m-spaced-bold" sx={{ textIndent: '24px' }}>
+      <Text variant="m-spaced-bold" sx={{ hyphens: 'auto' }}>
         {capitalize(body)}
       </Text>
       <FlexLayout flexDirection="column" space={2}>
