@@ -1,8 +1,12 @@
 import range from 'lodash/range';
 
+import { withMessage } from '~/hocs';
+import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text } from '~/ui';
 
-function Pagination({ forcePage, pageCount, onPageChange }) {
+function Pagination({ forcePage, message, pageCount, onPageChange }) {
+  useConsoleLog(message);
+
   const pageNumbers = range(1, pageCount + 1);
 
   return (
@@ -29,4 +33,4 @@ function Pagination({ forcePage, pageCount, onPageChange }) {
   );
 }
 
-export default Pagination;
+export default withMessage(Pagination);

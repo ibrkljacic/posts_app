@@ -1,6 +1,10 @@
+import { withMessage } from '~/hocs';
+import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text } from '~/ui';
 
-function Footer() {
+function Footer({ message }) {
+  useConsoleLog(message);
+
   return (
     <FlexLayout
       bg="background"
@@ -15,4 +19,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default withMessage(Footer);

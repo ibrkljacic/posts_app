@@ -1,8 +1,12 @@
 import { PageLayout } from '~/components/Shared';
+import { withMessage } from '~/hocs';
+import { useConsoleLog } from '~/hooks';
 
 import Login from './Login';
 
-function HomePage() {
+function HomePage({ message }) {
+  useConsoleLog(message);
+
   return (
     <PageLayout>
       <Login />
@@ -10,4 +14,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default withMessage(HomePage);

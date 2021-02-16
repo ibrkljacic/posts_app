@@ -5,7 +5,6 @@ if (process.env.NODE_ENV === 'test') {
 } else {
   configuration = {
     baseUrl: process.env.REACT_APP_BASE_URL,
-    corsRequests: true,
   };
 }
 

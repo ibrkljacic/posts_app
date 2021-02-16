@@ -1,7 +1,8 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { isUserAuthenticated } from '~/auth';
-import { useDocumentTitle } from '~/hooks';
+import { withMessage } from '~/hocs';
+import { useConsoleLog, useDocumentTitle } from '~/hooks';
 import routes, { routesEnum } from '~/routes';
 
 import HomePage from '../HomePage';
@@ -17,7 +18,8 @@ function PrivateRoute({ component: Component, ...rest }) {
   );
 }
 
-function ContentWindow() {
+function ContentWindow({ message }) {
+  useConsoleLog(message);
   useDocumentTitle();
 
   return (
@@ -33,4 +35,4 @@ function ContentWindow() {
   );
 }
 
-export default ContentWindow;
+export default withMessage(ContentWindow);

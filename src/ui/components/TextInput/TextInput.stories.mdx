@@ -2,9 +2,9 @@ import { ArgsTable, Meta, Canvas } from '@storybook/addon-docs/blocks';
 
 import { Box, FlexLayout } from '~/ui';
 
-import { TextInputComponent, textInputVariantsMap } from './TextInput';
+import { TextInputComponent as TextInput, textInputVariantsMap } from './TextInput';
 
-<Meta title="Components/Input/TextInput" component={TextInputComponent} />
+<Meta title="Components/Input/TextInput" component={TextInput} />
 
 # TextInput
 
@@ -15,7 +15,7 @@ import { TextInputComponent, textInputVariantsMap } from './TextInput';
 `TextInput` is a controlled component which exposes `value` and `onChange` props. <br/>
 Also, it is wrapped by `withLabel` HOC that exposes `label` prop.
 
-<ArgsTable of={TextInputComponent} />
+<ArgsTable of={TextInput} />
 
 ## Use
 
@@ -23,7 +23,7 @@ Easily render input component and control it with `value` and `onChange` callbac
 
 <Canvas>
   <Box sx={{ width: '320px' }}>
-    <TextInputComponent label="Label example" value="Fixed value" onChange={alert} />
+    <TextInput label="Label example" value="Fixed value" onChange={alert} />
   </Box>
 </Canvas>
 
@@ -35,8 +35,8 @@ Easily render input component and control it with `value` and `onChange` callbac
   <FlexLayout flexDirection="column" space={4}>
     {Object.keys(textInputVariantsMap).map((variant) => (
       <FlexLayout key={variant} space={4}>
-        <TextInputComponent label={variant} value={variant} variant={variant} onChange={alert} />
-        <TextInputComponent isDisabled label={variant} value={variant} variant={variant} onChange={alert} />
+        <TextInput label={variant} value={variant} variant={variant} onChange={alert} />
+        <TextInput isDisabled label={variant} value={variant} variant={variant} onChange={alert} />
       </FlexLayout>
     ))}
   </FlexLayout>

@@ -1,8 +1,11 @@
+import { withMessage } from '~/hocs';
 import { FlexLayout, Text, theme } from '~/ui';
 
 const { borders } = theme;
 
-function Borders() {
+function Borders({ message }) {
+  console.log(message);
+
   return (
     <FlexLayout flexDirection="column" space={8}>
       {Object.keys(borders).map((border) => {
@@ -19,4 +22,4 @@ function Borders() {
   );
 }
 
-export default Borders;
+export default withMessage(Borders);

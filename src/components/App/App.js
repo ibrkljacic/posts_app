@@ -1,8 +1,12 @@
 import { BrowserRouter } from 'react-router-dom';
 
 import MainLayout from '~/components/MainLayout';
+import { withMessage } from '~/hocs';
+import { useConsoleLog } from '~/hooks';
 
-function App() {
+function App({ message }) {
+  useConsoleLog(message);
+
   return (
     <BrowserRouter>
       <MainLayout />
@@ -10,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default withMessage(App);

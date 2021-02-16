@@ -1,5 +1,7 @@
 import Color from 'color';
 
+import { withMessage } from '~/hocs';
+import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text } from '~/ui';
 
 // based on https://gist.github.com/vladimirbrasil/bd139851ff757a1c8cb46fac93e733eb
@@ -21,7 +23,9 @@ function coerceRgb(color) {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-export default function ColorPalette({ colorKey, colorMap }) {
+function ColorPalette({ colorKey, colorMap, message }) {
+  useConsoleLog(message);
+
   const colors = Object.keys(colorMap).filter((color) => color.startsWith(colorKey));
 
   return (
@@ -46,3 +50,5 @@ export default function ColorPalette({ colorKey, colorMap }) {
     </FlexLayout>
   );
 }
+
+export default withMessage(ColorPalette);

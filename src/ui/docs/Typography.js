@@ -1,8 +1,12 @@
 import React from 'react';
 
+import { withMessage } from '~/hocs';
+import { useConsoleLog } from '~/hooks';
 import { Box, FlexLayout, Text, theme } from '~/ui';
 
-function Typography() {
+function Typography({ message }) {
+  useConsoleLog(message);
+
   return (
     <FlexLayout flexDirection="column" space={8}>
       {Object.keys(theme.text).map((variant) => {
@@ -23,4 +27,4 @@ function Typography() {
   );
 }
 
-export default Typography;
+export default withMessage(Typography);
