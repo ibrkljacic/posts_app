@@ -1,10 +1,11 @@
 import { withMessage } from '~/hocs';
+import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text, theme } from '~/ui';
 
 const { borders } = theme;
 
 function Borders({ message }) {
-  console.log(message);
+  useConsoleLog(message);
 
   return (
     <FlexLayout flexDirection="column" space={8}>

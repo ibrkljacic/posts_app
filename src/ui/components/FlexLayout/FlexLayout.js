@@ -1,51 +1,52 @@
 import PT from 'prop-types';
 import React from 'react';
 
+import { withMessage } from '~/hocs';
+import { useConsoleLog } from '~/hooks';
 import { Box } from '~/ui';
 
-const FlexLayout = React.forwardRef(
-  (
-    {
-      alignItems,
-      children,
-      flex,
-      flexDirection,
-      flexGrow,
-      flexShrink,
-      flexWrap,
-      justifyContent,
-      space = 0,
-      sx = {},
-      ...rest
-    },
-    ref
-  ) => {
-    const marginDirection = flexDirection === 'column' ? 'mb' : 'mr';
+function FlexLayout({
+  alignItems,
+  children,
+  flex,
+  flexDirection,
+  flexGrow,
+  flexShrink,
+  flexWrap,
+  message,
+  myRef,
+  justifyContent,
+  space = 0,
+  sx = {},
+  ...rest
+}) {
+  useConsoleLog(message);
 
-    return (
-      <Box
-        ref={ref}
-        sx={{
-          ...sx,
-          alignItems,
-          display: 'flex',
-          flex,
-          flexDirection,
-          flexGrow,
-          flexShrink,
-          flexWrap,
-          justifyContent,
-          '> :not(:last-child)': {
-            [marginDirection]: space,
-          },
-        }}
-        {...rest}
-      >
-        {children}
-      </Box>
-    );
-  }
-);
+  const marginDirection = flexDirection === 'column' ? 'mb' : 'mr';
+
+  return (
+    <Box
+      ref={myRef}
+      sx={{
+        ...sx,
+        alignItems,
+        display: 'flex',
+        flex,
+        flexDirection,
+        flexGrow,
+        flexShrink,
+        flexWrap,
+        justifyContent,
+        '> :not(:last-child)': {
+          [marginDirection]: space,
+        },
+      }}
+      {...rest}
+    >
+      {children}
+    </Box>
+  );
+}
 
 FlexLayout.propTypes = {
   alignItems: PT.string,
@@ -60,4 +61,11 @@ FlexLayout.propTypes = {
   sx: PT.object,
 };
 
-export default FlexLayout;
+const FlexLayoutWithMessage = withMessage(FlexLayout);
+
+export default React.forwardRef((props, ref) => {
+  return <FlexLayoutWithMessage {...props} myRef={ref} />;
+});
+
+// storybook exports
+export const FlexLayoutComponent = FlexLayout;

@@ -8,11 +8,10 @@ import { FlexLayout, Text } from '~/ui';
 import Icon, { iconKeyPropTypes } from '~/ui/components/Icon';
 
 function Menu({ anchorElement, message, options = [] }) {
-  useConsoleLog(message);
-
   const ref = useRef();
   const [showMenu, setShowMenu] = useState(false);
 
+  useConsoleLog(message);
   useOnClickOutside(ref, () => setShowMenu(false));
 
   return (
