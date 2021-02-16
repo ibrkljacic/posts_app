@@ -18,7 +18,7 @@ function PageLayout({ children, hasBack = false, title }) {
       <FlexLayout flexDirection="column" space={4}>
         {hasBack && <Button iconLeft="arrowLeft" text="Back" variant="link" onClick={history.goBack} />}
         {title && (
-          <Text as="h1" color="red-500" variant="3xl-spaced-bold">
+          <Text as="h1" variant="3xl-spaced-bold">
             {capitalize(title)}
           </Text>
         )}
