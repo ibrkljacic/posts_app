@@ -6,8 +6,7 @@ import { getPost } from '~/api';
 import { Comment, PageLayout } from '~/components/Shared';
 import { withMessage } from '~/hocs';
 import { useConsoleLog } from '~/hooks';
-import { Box, Button, FlexLayout, LoadingSpinner, Text } from '~/ui';
-import { showToast } from '~/ui/components/Toast';
+import { Box, Button, FlexLayout, LoadingSpinner, Text, Toast } from '~/ui';
 
 function PostViewPage({ message }) {
   const { postId } = useParams();
@@ -20,7 +19,7 @@ function PostViewPage({ message }) {
   useEffect(() => {
     getPost(postId)
       .then((res) => setPost(res))
-      .catch(() => showToast('Something went wrong. Please try again!'))
+      .catch(() => Toast.show('Something went wrong. Please try again!'))
       .finally(() => setIsLoading(false));
   }, []);
 

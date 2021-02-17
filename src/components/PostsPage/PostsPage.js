@@ -4,8 +4,7 @@ import { getPosts } from '~/api';
 import { PageLayout } from '~/components/Shared';
 import { withMessage } from '~/hocs';
 import { useConsoleLog } from '~/hooks';
-import { FlexLayout, LoadingSpinner, Pagination, Text, TextInput } from '~/ui';
-import { showToast } from '~/ui/components/Toast';
+import { FlexLayout, LoadingSpinner, Pagination, Text, TextInput, Toast } from '~/ui';
 
 import Post from './Post';
 
@@ -22,7 +21,7 @@ function PostsPage({ message }) {
   useEffect(() => {
     getPosts()
       .then((res) => setPosts(res))
-      .catch(() => showToast('Something went wrong. Please try again!'))
+      .catch(() => Toast.show('Something went wrong. Please try again!'))
       .finally(() => setIsLoading(false));
   }, []);
 

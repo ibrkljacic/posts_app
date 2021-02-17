@@ -7,8 +7,7 @@ import { withMessage } from '~/hocs';
 import { useConsoleLog } from '~/hooks';
 import { useEnter } from '~/hooks/interaction';
 import { routesEnum } from '~/routes';
-import { Button, FlexLayout, Text, TextInput } from '~/ui';
-import { showToast } from '~/ui/components/Toast';
+import { Button, FlexLayout, Text, TextInput, Toast } from '~/ui';
 
 function handleOnLoginClick({ email, password }) {
   login({ email, password })
@@ -16,7 +15,7 @@ function handleOnLoginClick({ email, password }) {
       setAccessToken(res.accessToken);
       window.location.reload();
     })
-    .catch(() => showToast('Incorrect email or password!'));
+    .catch(() => Toast.show('Incorrect email or password!'));
 }
 
 function Login({ message }) {

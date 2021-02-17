@@ -6,7 +6,7 @@ import { Slide, toast, ToastContainer } from 'react-toastify';
 
 import Toast from './Toast';
 
-export function ToastMessageContainer() {
+function ToastMessageContainer() {
   return (
     <ToastContainer
       autoClose={2500}
@@ -24,6 +24,11 @@ export function ToastMessageContainer() {
   );
 }
 
-export function showToast(text) {
+function showToast(text) {
   toast(<Toast text={text} />);
 }
+
+Toast.show = showToast;
+Toast.Container = ToastMessageContainer;
+
+export default Toast;

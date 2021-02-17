@@ -8,3 +8,4 @@ export { default as Pagination } from './Pagination';
 export { default as Switch } from './Switch';
 export { default as Text } from './Text';
 export { default as TextInput } from './TextInput';
+export { default as Toast } from './Toast';
