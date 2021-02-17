@@ -3,10 +3,8 @@ import InlineSvg from 'react-inlinesvg';
 
 import { withMessage } from '~/hocs';
 import { useConsoleLog } from '~/hooks';
-import { theme } from '~/ui';
+import { FlexLayout, theme } from '~/ui';
 import loadingSpinner from '~/ui/assets/icons/loading-spinner.svg';
-
-import FlexLayout from '../FlexLayout';
 
 const sizesMap = {
   s: '20px',

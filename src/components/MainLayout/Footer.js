@@ -2,6 +2,8 @@ import { withMessage } from '~/hocs';
 import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text } from '~/ui';
 
+const currentYear = new Date().getFullYear();
+
 function Footer({ message }) {
   useConsoleLog(message);
 
@@ -14,7 +16,7 @@ function Footer({ message }) {
       sx={{ borderTop: 'border-red', width: '100%', zIndex: 'navbar' }}
     >
       <Text variant="s-spaced-bold">IBRKLJACIC</Text>
-      <Text variant="s-spaced-bold">{new Date().getFullYear()}</Text>
+      <Text variant="s-spaced-bold">{currentYear}</Text>
     </FlexLayout>
   );
 }

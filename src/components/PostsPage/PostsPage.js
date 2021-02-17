@@ -4,10 +4,9 @@ import { getPosts } from '~/api';
 import { PageLayout } from '~/components/Shared';
 import { withMessage } from '~/hocs';
 import { useConsoleLog } from '~/hooks';
-import { FlexLayout, LoadingSpinner, Text, TextInput } from '~/ui';
+import { FlexLayout, LoadingSpinner, Pagination, Text, TextInput } from '~/ui';
 import { showToast } from '~/ui/components/Toast';
 
-import Pagination from './Pagination';
 import Post from './Post';
 
 const PAGE_SIZE = 10;

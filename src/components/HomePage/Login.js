@@ -36,9 +36,9 @@ function Login({ message }) {
       bg="transparent"
       flexDirection="column"
       m="0 auto"
-      p={8}
-      space={8}
-      sx={{ borderRadius: 's', boxShadow: 'depth-1', maxWidth: 'modal-width' }}
+      p={6}
+      space={4}
+      sx={{ borderRadius: 's', boxShadow: 'depth-2', maxWidth: 'modal-s-width' }}
     >
       <Text textAlign="center" variant="3xl-spaced-bold">
         LOG IN
@@ -50,6 +50,7 @@ function Login({ message }) {
       <Button
         isDisabled={!email.length || !password.length}
         isFullWidth
+        sx={{ mt: 4 }}
         text="Log In"
         variant="secondary"
         onClick={() => handleOnLoginClick({ email, password })}

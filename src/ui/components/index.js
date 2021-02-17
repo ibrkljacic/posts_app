@@ -4,6 +4,7 @@ export { default as FlexLayout } from './FlexLayout';
 export { default as Icon } from './Icon';
 export { default as LoadingSpinner } from './LoadingSpinner';
 export { default as Menu } from './Menu';
+export { default as Pagination } from './Pagination';
 export { default as Switch } from './Switch';
 export { default as Text } from './Text';
 export { default as TextInput } from './TextInput';

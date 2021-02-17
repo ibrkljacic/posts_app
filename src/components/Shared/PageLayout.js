@@ -19,14 +19,14 @@ function PageLayout({ children, hasBack = false, message, title }) {
       space={10}
       sx={{ maxWidth: 'page-size', width: '100%', zIndex: 'page' }}
     >
-      <FlexLayout flexDirection="column" space={4}>
-        {hasBack && <Button iconLeft="arrowLeft" text="Back" variant="link" onClick={history.goBack} />}
-        {title && (
+      {title && (
+        <FlexLayout flexDirection="column" space={4}>
+          {hasBack && <Button iconLeft="arrowLeft" text="Back" variant="link" onClick={history.goBack} />}
           <Text as="h1" variant="3xl-spaced-bold">
             {capitalize(title)}
           </Text>
-        )}
-      </FlexLayout>
+        </FlexLayout>
+      )}
       <Box>{children}</Box>
     </FlexLayout>
   );

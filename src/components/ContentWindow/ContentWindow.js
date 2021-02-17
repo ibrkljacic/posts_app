@@ -1,11 +1,10 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { isUserAuthenticated } from '~/auth';
+import HomePage from '~/components/HomePage';
 import { withMessage } from '~/hocs';
 import { useConsoleLog, useDocumentTitle } from '~/hooks';
 import routes, { routesEnum } from '~/routes';
-
-import HomePage from '../HomePage';
 
 function PrivateRoute({ component: Component, ...rest }) {
   return (

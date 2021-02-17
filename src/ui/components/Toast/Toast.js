@@ -1,4 +1,4 @@
-import React from 'react';
+import PT from 'prop-types';
 
 import { withMessage } from '~/hocs';
 import { useConsoleLog } from '~/hooks';
@@ -19,5 +19,10 @@ function Toast({ message, size = 'm', text }) {
     </FlexLayout>
   );
 }
+
+Toast.propTypes = {
+  size: PT.oneOf(Object.keys(sizesMap)),
+  text: PT.string.isRequired,
+};
 
 export default withMessage(Toast);
