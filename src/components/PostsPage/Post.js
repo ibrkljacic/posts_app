@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { Comment } from '~/components/Shared';
 import { withMessage } from '~/hocs';
 import { useConsoleLog } from '~/hooks';
-import { Button, FlexLayout, Text } from '~/ui';
+import { Button, FlexLayout, Text, theme } from '~/ui';
 
 function Post({ message, post }) {
   const history = useHistory();
@@ -20,7 +20,7 @@ function Post({ message, post }) {
       <FlexLayout flexDirection="column" space={4}>
         <Text
           variant="2xl-spaced-bold"
-          sx={{ '&:hover': { textDecoration: 'underline' } }}
+          sx={{ '&:hover': { textDecoration: `underline ${theme.colors['red-500']}` } }}
           onClick={() => history.push(`/post/${id}`)}
         >
           {capitalize(title)}
