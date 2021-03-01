@@ -3,8 +3,6 @@ import { useHistory } from 'react-router-dom';
 
 import { login } from '~/api';
 import { isUserAuthenticated, setAccessToken } from '~/auth';
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { useEnter } from '~/hooks/interaction';
 import { routesEnum } from '~/routes';
 import { Button, FlexLayout, Text, TextInput, Toast } from '~/ui';
@@ -18,12 +16,11 @@ function handleOnLoginClick({ email, password }) {
     .catch(() => Toast.show('Incorrect email or password!'));
 }
 
-function Login({ message }) {
+function Login() {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  useConsoleLog(message);
   useEnter(() => handleOnLoginClick({ email, password }));
 
   if (isUserAuthenticated) {
@@ -58,4 +55,4 @@ function Login({ message }) {
   );
 }
 
-export default withMessage(Login);
+export default Login;

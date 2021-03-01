@@ -1,14 +1,10 @@
 import capitalize from 'lodash/capitalize';
 import { useHistory } from 'react-router-dom';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { Box, Button, FlexLayout, Text } from '~/ui';
 
-function PageLayout({ children, hasBack = false, message, title }) {
+function PageLayout({ children, hasBack = false, title }) {
   const history = useHistory();
-
-  useConsoleLog(message);
 
   return (
     <FlexLayout
@@ -32,4 +28,4 @@ function PageLayout({ children, hasBack = false, message, title }) {
   );
 }
 
-export default withMessage(PageLayout);
+export default PageLayout;

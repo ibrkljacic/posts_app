@@ -1,12 +1,8 @@
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { Box, FlexLayout, Text, theme } from '~/ui';
 
 const { space } = theme;
 
-function Space({ message }) {
-  useConsoleLog(message);
-
+function Space() {
   return (
     <FlexLayout flexDirection="column" space={4}>
       {space.map((width, i) => {
@@ -23,4 +19,4 @@ function Space({ message }) {
   );
 }
 
-export default withMessage(Space);
+export default Space;

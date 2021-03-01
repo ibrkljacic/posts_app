@@ -1,13 +1,9 @@
 import PT from 'prop-types';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { Box, FlexLayout, Icon, Text } from '~/ui';
 import { iconKeyPropTypes } from '~/ui/components/Icon';
 
-function Switch({ icon, isDisabled = false, message, value, label, onChange = () => {} }) {
-  useConsoleLog(message);
-
+function Switch({ icon, isDisabled = false, value, label, onChange = () => {} }) {
   return (
     <FlexLayout
       alignItems="center"
@@ -43,6 +39,4 @@ Switch.propTypes = {
   onChange: PT.func,
 };
 
-export default withMessage(Switch);
-// storybook exports
-export const SwitchComponent = Switch;
+export default Switch;

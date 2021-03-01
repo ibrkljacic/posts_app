@@ -1,12 +1,8 @@
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text } from '~/ui';
 
 const currentYear = new Date().getFullYear();
 
-function Footer({ message }) {
-  useConsoleLog(message);
-
+function Footer() {
   return (
     <FlexLayout
       bg="background"
@@ -21,4 +17,4 @@ function Footer({ message }) {
   );
 }
 
-export default withMessage(Footer);
+export default Footer;

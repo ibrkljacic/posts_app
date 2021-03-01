@@ -1,7 +1,5 @@
 import PT from 'prop-types';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Icon, LoadingSpinner, styles, Text } from '~/ui';
 import { iconKeyPropTypes } from '~/ui/components/Icon';
 
@@ -58,15 +56,12 @@ function Button({
   isDisabled = false,
   isFullWidth = false,
   isLoading = false,
-  message,
   size = 'm',
   sx = {},
   text,
   variant = 'primary',
   onClick = () => {},
 }) {
-  useConsoleLog(message);
-
   const { bg, border, color, hoverStyles } = variantsMap[variant];
   const { height, iconSize, px, space, textVariant } = sizesMap[size];
 
@@ -126,8 +121,7 @@ Button.propTypes = {
   onClick: PT.func,
 };
 
-export default withMessage(Button);
+export default Button;
 // storybook exports
-export const ButtonComponent = Button;
 export const buttonSizesMap = sizesMap;
 export const buttonVariantsMap = variantsMap;

@@ -3,15 +3,11 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Comment } from '~/components/Shared';
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { Button, FlexLayout, Text, theme } from '~/ui';
 
-function Post({ message, post }) {
+function Post({ post }) {
   const history = useHistory();
   const [showComments, setShowComments] = useState(false);
-
-  useConsoleLog(message);
 
   const { body, comments, id, title, user } = post;
 
@@ -52,4 +48,4 @@ function Post({ message, post }) {
   );
 }
 
-export default withMessage(Post);
+export default Post;

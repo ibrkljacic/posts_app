@@ -1,12 +1,8 @@
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text, theme } from '~/ui';
 
 const { borders } = theme;
 
-function Borders({ message }) {
-  useConsoleLog(message);
-
+function Borders() {
   return (
     <FlexLayout flexDirection="column" space={8}>
       {Object.keys(borders).map((border) => {
@@ -23,4 +19,4 @@ function Borders({ message }) {
   );
 }
 
-export default withMessage(Borders);
+export default Borders;

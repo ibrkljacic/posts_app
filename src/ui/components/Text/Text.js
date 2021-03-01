@@ -1,13 +1,9 @@
 import PT from 'prop-types';
 import { Text as ThemeText } from 'theme-ui';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { styles, theme } from '~/ui';
 
-function Text({ as = 'span', children, color, message, sx = {}, textAlign, variant = 'm-spaced', ...rest }) {
-  useConsoleLog(message);
-
+function Text({ as = 'span', children, color, sx = {}, textAlign, variant = 'm-spaced', ...rest }) {
   const clickableStyle = rest.onClick ? styles.interactions.clickable : {};
 
   return (
@@ -36,6 +32,4 @@ Text.propTypes = {
   variant: PT.oneOf(Object.keys(theme.text)),
 };
 
-export default withMessage(Text);
-// storybook exports
-export const TextComponent = Text;
+export default Text;

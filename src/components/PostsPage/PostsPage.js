@@ -2,21 +2,17 @@ import { useEffect, useState } from 'react';
 
 import { getPosts } from '~/api';
 import { PageLayout } from '~/components/Shared';
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { FlexLayout, LoadingSpinner, Pagination, Text, TextInput, Toast } from '~/ui';
 
 import Post from './Post';
 
 const PAGE_SIZE = 10;
 
-function PostsPage({ message }) {
+function PostsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [filterValue, setFilterValue] = useState('');
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-
-  useConsoleLog(message);
 
   useEffect(() => {
     getPosts()
@@ -71,4 +67,4 @@ function PostsPage({ message }) {
   );
 }
 
-export default withMessage(PostsPage);
+export default PostsPage;

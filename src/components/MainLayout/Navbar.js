@@ -3,8 +3,6 @@ import { useColorMode } from 'theme-ui';
 
 import { logout } from '~/api';
 import { removeAccessToken } from '~/auth';
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { routesEnum } from '~/routes';
 import { FlexLayout, Icon, Menu, Switch } from '~/ui';
 
@@ -15,11 +13,9 @@ function handleOnLogoutClick() {
   });
 }
 
-function Navbar({ message }) {
+function Navbar() {
   const [colorMode, setColorMode] = useColorMode();
   const history = useHistory();
-
-  useConsoleLog(message);
 
   return (
     <FlexLayout
@@ -48,4 +44,4 @@ function Navbar({ message }) {
   );
 }
 
-export default withMessage(Navbar);
+export default Navbar;

@@ -1,10 +1,6 @@
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text } from '~/ui';
 
-export function Comment({ comment, message }) {
-  useConsoleLog(message);
-
+export function Comment({ comment }) {
   const { body, email } = comment;
 
   return (
@@ -31,4 +27,4 @@ export function Comment({ comment, message }) {
     </FlexLayout>
   );
 }
-export default withMessage(Comment);
+export default Comment;

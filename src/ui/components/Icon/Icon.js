@@ -1,8 +1,6 @@
 import PT from 'prop-types';
 import InlineSvg from 'react-inlinesvg';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { Box, styles } from '~/ui';
 import * as icons from '~/ui/assets/icons';
 
@@ -14,9 +12,7 @@ const sizesMap = {
   xl: '32px',
 };
 
-function Icon({ color, icon, message, size = 'm', sx = {}, ...rest }) {
-  useConsoleLog(message);
-
+function Icon({ color, icon, size = 'm', sx = {}, ...rest }) {
   const iconSrc = icons[icon]; // eslint-disable-line import/namespace
   if (!iconSrc) {
     return null;
@@ -58,7 +54,6 @@ Icon.propTypes = {
   sx: PT.object,
 };
 
-export default withMessage(Icon);
+export default Icon;
 // storybook exports
-export const IconComponent = Icon;
 export const iconSizesMap = sizesMap;

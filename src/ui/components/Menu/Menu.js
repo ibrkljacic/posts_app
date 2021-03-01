@@ -1,17 +1,14 @@
 import PT from 'prop-types';
 import { useRef, useState } from 'react';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { useOnClickOutside } from '~/hooks/interaction';
 import { FlexLayout, Text } from '~/ui';
 import Icon, { iconKeyPropTypes } from '~/ui/components/Icon';
 
-function Menu({ anchorElement, message, options = [] }) {
+function Menu({ anchorElement, options = [] }) {
   const ref = useRef();
   const [showMenu, setShowMenu] = useState(false);
 
-  useConsoleLog(message);
   useOnClickOutside(ref, () => setShowMenu(false));
 
   return (
@@ -82,6 +79,4 @@ Menu.propTypes = {
   options: PT.arrayOf(optionPropType),
 };
 
-export default withMessage(Menu);
-// storybook exports
-export const MenuComponent = Menu;
+export default Menu;

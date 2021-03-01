@@ -2,8 +2,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { isUserAuthenticated } from '~/auth';
 import HomePage from '~/components/HomePage';
-import { withMessage } from '~/hocs';
-import { useConsoleLog, useDocumentTitle } from '~/hooks';
+import { useDocumentTitle } from '~/hooks';
 import routes, { routesEnum } from '~/routes';
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -17,8 +16,7 @@ function PrivateRoute({ component: Component, ...rest }) {
   );
 }
 
-function ContentWindow({ message }) {
-  useConsoleLog(message);
+function ContentWindow() {
   useDocumentTitle();
 
   return (
@@ -34,4 +32,4 @@ function ContentWindow({ message }) {
   );
 }
 
-export default withMessage(ContentWindow);
+export default ContentWindow;

@@ -1,8 +1,6 @@
 import PT from 'prop-types';
 import * as React from 'react';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { Box, FlexLayout, Icon, styles, theme } from '~/ui';
 import { withLabel } from '~/ui/hocs';
 
@@ -23,7 +21,6 @@ const variantsMap = {
 
 function TextInput({
   isDisabled = false,
-  message,
   placeholder = '',
   sx = {},
   type = 'text',
@@ -31,8 +28,6 @@ function TextInput({
   variant = 'primary',
   onChange = () => {},
 }) {
-  useConsoleLog(message);
-
   const { borderStyles, iconLeft, pl, pr } = variantsMap[variant];
 
   return (
@@ -95,7 +90,7 @@ TextInput.propTypes = {
   onChange: PT.func,
 };
 
-export default withLabel(withMessage(TextInput));
+export default withLabel(TextInput);
 // storybook exports
 export const TextInputComponent = TextInput;
 export const textInputVariantsMap = variantsMap;

@@ -1,13 +1,9 @@
 import range from 'lodash/range';
 import PT from 'prop-types';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Text } from '~/ui';
 
-function Pagination({ forcePage, message, pageCount, onPageChange = () => {} }) {
-  useConsoleLog(message);
-
+function Pagination({ forcePage, pageCount, onPageChange = () => {} }) {
   const pageNumbers = range(1, pageCount + 1);
 
   return (
@@ -42,4 +38,4 @@ Pagination.propTypes = {
   onPageChange: PT.func,
 };
 
-export default withMessage(Pagination);
+export default Pagination;

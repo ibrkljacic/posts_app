@@ -4,17 +4,13 @@ import { useParams } from 'react-router-dom';
 
 import { getPost } from '~/api';
 import { Comment, PageLayout } from '~/components/Shared';
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { Box, Button, FlexLayout, LoadingSpinner, Text, Toast } from '~/ui';
 
-function PostViewPage({ message }) {
+function PostViewPage() {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [post, setPost] = useState([]);
   const [showComments, setShowComments] = useState(true);
-
-  useConsoleLog(message);
 
   useEffect(() => {
     getPost(postId)
@@ -57,4 +53,4 @@ function PostViewPage({ message }) {
   );
 }
 
-export default withMessage(PostViewPage);
+export default PostViewPage;

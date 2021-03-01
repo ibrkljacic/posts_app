@@ -1,8 +1,6 @@
 import PT from 'prop-types';
 import React from 'react';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { Box } from '~/ui';
 
 function FlexLayout({
@@ -13,15 +11,12 @@ function FlexLayout({
   flexGrow,
   flexShrink,
   flexWrap,
-  message,
   myRef,
   justifyContent,
   space = 0,
   sx = {},
   ...rest
 }) {
-  useConsoleLog(message);
-
   const marginDirection = flexDirection === 'column' ? 'mb' : 'mr';
 
   return (
@@ -61,10 +56,8 @@ FlexLayout.propTypes = {
   sx: PT.object,
 };
 
-const FlexLayoutWithMessage = withMessage(FlexLayout);
-
 export default React.forwardRef((props, ref) => {
-  return <FlexLayoutWithMessage {...props} myRef={ref} />;
+  return <FlexLayout {...props} myRef={ref} />;
 });
 
 // storybook exports

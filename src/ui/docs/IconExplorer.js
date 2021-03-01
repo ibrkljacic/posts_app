@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 
-import { withMessage } from '~/hocs';
-import { useConsoleLog } from '~/hooks';
 import { FlexLayout, Icon, Text, theme } from '~/ui';
 import * as icons from '~/ui/assets/icons';
 
 const colorOptions = Object.keys(theme.colors);
 const sizeOptions = ['xs', 's', 'm', 'l', 'xl'];
 
-function IconExplorer({ message }) {
+function IconExplorer() {
   const [color, setColor] = useState('black');
   const [size, setSize] = useState('m');
-
-  useConsoleLog(message);
 
   return (
     <FlexLayout flexDirection="column" space={8}>
@@ -62,4 +58,4 @@ function IconExplorer({ message }) {
   );
 }
 
-export default withMessage(IconExplorer);
+export default IconExplorer;
