@@ -16,8 +16,8 @@ function withTheme(Component) {
 export const parameters = {
   docs: {
     components: {
-      Canvas: withTheme(Canvas)
-    }
+      Canvas: withTheme(Canvas),
+    },
   },
   options: {
     storySort: {
@@ -27,7 +27,7 @@ export const parameters = {
         'Specs',
         'Components',
         ['Core', 'Feedback', 'Input', 'Interaction', 'Input', 'Navigation'],
-      ]
-    }
-  }
-}
+      ],
+    },
+  },
+};

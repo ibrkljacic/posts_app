@@ -6,7 +6,7 @@ import colors from '../src/ui/theme/colors';
 const theme = create({
   base: 'light',
   colorSecondary: colors['red-500'],
-  textColor: colors['black']
+  textColor: colors['black'],
 });
 
 addons.setConfig({ theme });
