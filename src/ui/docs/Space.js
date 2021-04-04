@@ -7,7 +7,7 @@ function Space() {
     <FlexLayout flexDirection="column" space={4}>
       {space.map((width, i) => {
         return (
-          <FlexLayout key={i} alignItems="center" space={8}>
+          <FlexLayout alignItems="center" key={i} space={8}>
             <Text sx={{ flex: '0 0 80px' }} variant="m-spaced-bold">
               {i} ({width})
             </Text>

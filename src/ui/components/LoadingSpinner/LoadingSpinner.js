@@ -13,7 +13,7 @@ const sizesMap = {
 
 function LoadingSpinner({ color = 'red-500', size = 'm', sx = {} }) {
   return (
-    <FlexLayout alignItems="center" justifyContent="center" color={color} sx={{ ...sx }}>
+    <FlexLayout alignItems="center" color={color} justifyContent="center" sx={{ ...sx }}>
       <InlineSvg height={sizesMap[size]} src={loadingSpinner} width={sizesMap[size]} />
     </FlexLayout>
   );

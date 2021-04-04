@@ -15,17 +15,17 @@ function Post({ post }) {
     <FlexLayout flexDirection="column" key={id} p={4} space={6} sx={{ boxShadow: 'depth-1' }}>
       <FlexLayout flexDirection="column" space={4}>
         <Text
-          variant="2xl-spaced-bold"
           sx={{ '&:hover': { textDecoration: `underline ${theme.colors['red-500']}` } }}
+          variant="2xl-spaced-bold"
           onClick={() => history.push(`/post/${id}`)}
         >
           {capitalize(title)}
         </Text>
-        <Text color="red-500" variant="m-spaced-bold" sx={{ flexShrink: '0' }}>
+        <Text color="red-500" sx={{ flexShrink: '0' }} variant="m-spaced-bold">
           {user.name}
         </Text>
       </FlexLayout>
-      <Text variant="m-spaced-bold" sx={{ hyphens: 'auto' }}>
+      <Text sx={{ hyphens: 'auto' }} variant="m-spaced-bold">
         {capitalize(body)}
       </Text>
       <FlexLayout flexDirection="column" space={2}>
@@ -37,9 +37,9 @@ function Post({ post }) {
           onClick={() => setShowComments(!showComments)}
         />
         {showComments && (
-          <FlexLayout flexDirection="column" space={4} p={2}>
+          <FlexLayout flexDirection="column" p={2} space={4}>
             {comments.map((comment) => (
-              <Comment key={comment.id} comment={comment} />
+              <Comment comment={comment} key={comment.id} />
             ))}
           </FlexLayout>
         )}

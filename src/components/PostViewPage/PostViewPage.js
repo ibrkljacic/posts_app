@@ -22,7 +22,7 @@ function PostViewPage() {
   const { body, comments, user } = post;
 
   return isLoading ? (
-    <FlexLayout justifyContent="center" flexGrow="1">
+    <FlexLayout flexGrow="1" justifyContent="center">
       <LoadingSpinner color="red-500" size="xl" />
     </FlexLayout>
   ) : (

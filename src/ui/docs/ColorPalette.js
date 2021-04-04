@@ -33,7 +33,7 @@ function ColorPalette({ colorKey, colorMap }) {
           const colorValue = colorMap[colorKey];
           const textColor = Color(coerceRgb(colorValue)).isLight() ? 'black' : 'white';
           return (
-            <FlexLayout key={colorKey} bg={colorKey} p={3} justifyContent="space-between">
+            <FlexLayout bg={colorKey} justifyContent="space-between" key={colorKey} p={3}>
               <Text color={textColor} variant="s-spaced">
                 {colorKey}
               </Text>

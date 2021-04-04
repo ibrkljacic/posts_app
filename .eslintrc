@@ -15,9 +15,11 @@
       }
     ],
     "react-hooks/exhaustive-deps": 0,
+    "react/self-closing-comp": "error",
     "import/no-anonymous-default-export": [2, { "allowObject": true }],
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "react/jsx-sort-props": [ "error", { "callbacksLast": true }]
   },
   "settings": {
     "import/resolver": {

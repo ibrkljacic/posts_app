@@ -7,7 +7,7 @@ function Borders() {
     <FlexLayout flexDirection="column" space={8}>
       {Object.keys(borders).map((border) => {
         return (
-          <FlexLayout key={border} alignItems="center" space={8}>
+          <FlexLayout alignItems="center" key={border} space={8}>
             <Text px={4} py={2} sx={{ border, minWidth: 300 }} variant="m-spaced-bold">
               {border}
             </Text>

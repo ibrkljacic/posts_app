@@ -34,8 +34,8 @@ function Switch({ icon, isDisabled = false, value, label, onChange = () => {} })
 Switch.propTypes = {
   icon: iconKeyPropTypes,
   isDisabled: PT.bool,
-  value: PT.bool,
   label: PT.string,
+  value: PT.bool,
   onChange: PT.func,
 };
 

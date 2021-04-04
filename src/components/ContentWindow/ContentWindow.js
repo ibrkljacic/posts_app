@@ -21,9 +21,9 @@ function ContentWindow() {
 
   return (
     <Switch>
-      <Route exact path={routesEnum.HOME_PAGE} component={HomePage} />
+      <Route component={HomePage} exact path={routesEnum.HOME_PAGE} />
       {Object.values(routes).map(({ component, path }) => (
-        <PrivateRoute exact component={component} key={path} path={path} />
+        <PrivateRoute component={component} exact key={path} path={path} />
       ))}
       <Route path="*">
         <Redirect to={routesEnum.HOME_PAGE} />

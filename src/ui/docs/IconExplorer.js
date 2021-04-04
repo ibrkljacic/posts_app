@@ -37,12 +37,12 @@ function IconExplorer() {
       <FlexLayout flexWrap="wrap" space={2}>
         {Object.keys(icons).map((icon) => (
           <FlexLayout
-            key={icon}
             alignItems="center"
             bg="gray-400"
-            flexDirection="column"
             flex="0 0 150px"
+            flexDirection="column"
             justifyContent="center"
+            key={icon}
             mb={2}
             p={4}
             space={2}

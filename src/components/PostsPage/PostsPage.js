@@ -26,7 +26,7 @@ function PostsPage() {
   const currentPosts = filteredPosts.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   return isLoading ? (
-    <FlexLayout justifyContent="center" flexGrow="1">
+    <FlexLayout flexGrow="1" justifyContent="center">
       <LoadingSpinner color="red-500" size="xl" />
     </FlexLayout>
   ) : (

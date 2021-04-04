@@ -12,7 +12,7 @@ export function Comment({ comment }) {
         justifyContent="center"
         sx={{ borderRadius: 'round', height: '52px', width: '52px' }}
       >
-        <Text color="background" variant="xl-spaced-bold" sx={{ textTransform: 'uppercase' }}>
+        <Text color="background" sx={{ textTransform: 'uppercase' }} variant="xl-spaced-bold">
           {email.slice(0, 2)}
         </Text>
       </FlexLayout>

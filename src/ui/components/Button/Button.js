@@ -67,10 +67,10 @@ function Button({
 
   return (
     <FlexLayout
-      as="button"
       alignItems="center"
-      justifyContent={isFullWidth ? 'center' : 'inherit'}
+      as="button"
       isDisabled={isDisabled || isLoading}
+      justifyContent={isFullWidth ? 'center' : 'inherit'}
       px={variant === 'link' ? 0 : px}
       sx={{
         ...sx,

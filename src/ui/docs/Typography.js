@@ -7,7 +7,7 @@ function Typography() {
     <FlexLayout flexDirection="column" space={8}>
       {Object.keys(theme.text).map((variant) => {
         return (
-          <FlexLayout key={variant} alignItems="center" justifyContent="space-between" space={8}>
+          <FlexLayout alignItems="center" justifyContent="space-between" key={variant} space={8}>
             <Box sx={{ flex: '0 0 200px' }}>
               <Text variant="m-spaced-bold">{variant}</Text>
             </Box>
