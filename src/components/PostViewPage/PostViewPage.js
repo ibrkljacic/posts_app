@@ -17,7 +17,7 @@ function PostViewPage() {
       .then((res) => setPost(res))
       .catch(() => Toast.show('Something went wrong. Please try again!'))
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [postId]);
 
   const { body, comments, user } = post;
 
