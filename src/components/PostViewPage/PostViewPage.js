@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { getPost } from '~/api';
 import { Comment, PageLayout } from '~/components/Shared';
-import { Box, Button, FlexLayout, LoadingSpinner, Text, Toast } from '~/ui';
+import { Button, Divider, FlexLayout, LoadingSpinner, Text, Toast } from '~/ui';
 
 function PostViewPage() {
   const { postId } = useParams();
@@ -33,9 +33,9 @@ function PostViewPage() {
         <Text color="red-500" variant="m-spaced-bold">
           {user.name}
         </Text>
-        <Box bg="gray-500" sx={{ height: '1px' }} />
+        <Divider />
         <Text variant="l-spaced-bold">{capitalize(body)}</Text>
-        <Box bg="gray-500" sx={{ height: '1px' }} />
+        <Divider />
         <Button
           iconRight={showComments ? 'chevronUp' : 'chevronDown'}
           size="s"
