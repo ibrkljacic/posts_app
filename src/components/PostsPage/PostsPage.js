@@ -9,27 +9,29 @@ import Post from './Post';
 const PAGE_SIZE = 10;
 
 function PostsPage() {
-  const [isLoading, setIsLoading] = useState(true);
   const [filterValue, setFilterValue] = useState('');
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     getPosts()
       .then((res) => setPosts(res))
-      .catch(() => Toast.show('Something went wrong. Please try again!'))
-      .finally(() => setIsLoading(false));
+      .catch(() => Toast.show('Something went wrong. Please try again!'));
   }, []);
+
+  if (!posts) {
+    return (
+      <FlexLayout flexGrow="1" justifyContent="center">
+        <LoadingSpinner color="red-500" size="xl" />
+      </FlexLayout>
+    );
+  }
 
   const filteredPosts = posts.filter((post) => post.user.name.toLowerCase().includes(filterValue.toLowerCase()));
 
   const currentPosts = filteredPosts.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
-  return isLoading ? (
-    <FlexLayout flexGrow="1" justifyContent="center">
-      <LoadingSpinner color="red-500" size="xl" />
-    </FlexLayout>
-  ) : (
+  return (
     <PageLayout title="Posts">
       <TextInput
         placeholder="Filter posts by user"

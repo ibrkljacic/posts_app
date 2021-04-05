@@ -8,25 +8,27 @@ import { Box, Button, FlexLayout, LoadingSpinner, Text, Toast } from '~/ui';
 
 function PostViewPage() {
   const { postId } = useParams();
-  const [isLoading, setIsLoading] = useState(true);
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState();
   const [showComments, setShowComments] = useState(true);
 
   useEffect(() => {
     getPost(postId)
       .then((res) => setPost(res))
-      .catch(() => Toast.show('Something went wrong. Please try again!'))
-      .finally(() => setIsLoading(false));
+      .catch(() => Toast.show('Something went wrong. Please try again!'));
   }, [postId]);
 
-  const { body, comments, user } = post;
+  if (!post) {
+    return (
+      <FlexLayout flexGrow="1" justifyContent="center">
+        <LoadingSpinner color="red-500" size="xl" />
+      </FlexLayout>
+    );
+  }
 
-  return isLoading ? (
-    <FlexLayout flexGrow="1" justifyContent="center">
-      <LoadingSpinner color="red-500" size="xl" />
-    </FlexLayout>
-  ) : (
-    <PageLayout hasBack title={post.title}>
+  const { body, comments, title, user } = post;
+
+  return (
+    <PageLayout hasBack title={title}>
       <FlexLayout flexDirection="column" space={6}>
         <Text color="red-500" variant="m-spaced-bold">
           {user.name}
