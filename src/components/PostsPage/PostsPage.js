@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { getPosts } from '~/api';
-import { PageLayout } from '~/components/Shared';
-import { FlexLayout, LoadingSpinner, Pagination, Text, TextInput, Toast } from '~/ui';
+import { LoadingState, PageLayout } from '~/components/Shared';
+import { FlexLayout, Pagination, Text, TextInput, Toast } from '~/ui';
 
 import Post from './Post';
 
@@ -20,11 +20,7 @@ function PostsPage() {
   }, []);
 
   if (!posts) {
-    return (
-      <FlexLayout flexGrow="1" justifyContent="center">
-        <LoadingSpinner color="red-500" size="xl" />
-      </FlexLayout>
-    );
+    return <LoadingState />;
   }
 
   const filteredPosts = posts.filter((post) => post.user.name.toLowerCase().includes(filterValue.toLowerCase()));

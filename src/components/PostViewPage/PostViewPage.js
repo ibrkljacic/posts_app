@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getPost } from '~/api';
-import { Comment, PageLayout } from '~/components/Shared';
-import { Button, Divider, FlexLayout, LoadingSpinner, Text, Toast } from '~/ui';
+import { Comment, LoadingState, PageLayout } from '~/components/Shared';
+import { Button, Divider, FlexLayout, Text, Toast } from '~/ui';
 
 function PostViewPage() {
   const { postId } = useParams();
@@ -18,11 +18,7 @@ function PostViewPage() {
   }, [postId]);
 
   if (!post) {
-    return (
-      <FlexLayout flexGrow="1" justifyContent="center">
-        <LoadingSpinner color="red-500" size="xl" />
-      </FlexLayout>
-    );
+    return <LoadingState />;
   }
 
   const { body, comments, title, user } = post;
