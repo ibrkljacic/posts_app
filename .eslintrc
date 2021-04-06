@@ -18,7 +18,7 @@
     "import/no-anonymous-default-export": [2, { "allowObject": true }],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "react/jsx-sort-props": [ "error", { "callbacksLast": true }]
+    "react/jsx-sort-props": ["error", { "callbacksLast": true }]
   },
   "settings": {
     "import/resolver": {
